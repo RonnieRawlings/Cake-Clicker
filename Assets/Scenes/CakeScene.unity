@@ -494,7 +494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -580, y: 116.900024}
+  m_AnchoredPosition: {x: -580, y: 84.157}
   m_SizeDelta: {x: 168.3134, y: 168.3134}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232600938
@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 752663868}
   - component: {fileID: 752663867}
   m_Layer: 5
-  m_Name: Increase CPS
+  m_Name: Increase CPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -918,7 +918,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2050955875}
         m_TargetAssemblyTypeName: ApplyUpgrades, Assembly-CSharp
-        m_MethodName: IncreaseCakesPerSecond
+        m_MethodName: IncreaseClickAmount
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -960,7 +960,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Increase CPS
+  m_text: Increase CPC
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1455,8 +1455,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 105.417656}
-  m_SizeDelta: {x: 200, y: 12.2006}
+  m_AnchoredPosition: {x: 0, y: 121.10392}
+  m_SizeDelta: {x: 200, y: 11.0328}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1424352050
 MonoBehaviour:
@@ -1590,7 +1590,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000019073, y: 127.9}
+  m_AnchoredPosition: {x: -0.0000019073, y: 143}
   m_SizeDelta: {x: 131.0209, y: 32.7553}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425803148
@@ -1779,7 +1779,7 @@ GameObject:
   - component: {fileID: 1713956213}
   - component: {fileID: 1713956215}
   m_Layer: 5
-  m_Name: Increase CPC
+  m_Name: Add Clicker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1950,7 +1950,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2050955875}
         m_TargetAssemblyTypeName: ApplyUpgrades, Assembly-CSharp
-        m_MethodName: IncreaseClickAmount
+        m_MethodName: IncreaseCakesPerSecond
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2344,6 +2344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fdde89d6d5cac46a6e047bc35ed66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theCake: {fileID: 232600936}
 --- !u!1 &2069933944
 GameObject:
   m_ObjectHideFlags: 0

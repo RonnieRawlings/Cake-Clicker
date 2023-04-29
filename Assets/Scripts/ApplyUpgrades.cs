@@ -4,12 +4,29 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ApplyUpgrades : MonoBehaviour
 {
-    public void IncreaseClickAmount()
+    [SerializeField] private GameObject theCake;
+
+    public void IncreaseCakesPerSecond()
     {
         TextMeshProUGUI priceText = transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+        int upgradePrice = int.Parse(priceText.text);
+
+        if (StaticValues.currentCakes >= upgradePrice) 
+        {
+            StaticValues.cakesPerSecond += 0.1f;
+            StaticValues.currentCakes -= upgradePrice;
+            IncreaseUpgradePrice(priceText, upgradePrice);
+            SpawnClicker();
+        }      
+    }
+
+    public void IncreaseClickAmount()
+    {
+        TextMeshProUGUI priceText = transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
         int upgradePrice = int.Parse(priceText.text);
 
         if (StaticValues.currentCakes >= upgradePrice)
@@ -18,20 +35,17 @@ public class ApplyUpgrades : MonoBehaviour
             StaticValues.currentCakes = StaticValues.currentCakes - upgradePrice;
             IncreaseUpgradePrice(priceText, upgradePrice);
         }
-        
     }
 
-    public void IncreaseCakesPerSecond()
+    public void SpawnClicker()
     {
-        TextMeshProUGUI priceText = transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
-        int upgradePrice = int.Parse(priceText.text);
+        GameObject clickerObj = new GameObject("Clicker");
+        clickerObj.transform.SetParent(theCake.transform);
+        clickerObj.transform.localScale = new Vector3(0.25f, 0.25f, 0);
 
-        if (StaticValues.currentCakes >= upgradePrice) 
-        {
-            StaticValues.cakesPerSecond = StaticValues.cakesPerSecond + 0.1f;
-            StaticValues.currentCakes = StaticValues.currentCakes - upgradePrice;
-            IncreaseUpgradePrice(priceText, upgradePrice);
-        }
+        Image image = clickerObj.AddComponent<Image>();
+        image.sprite = Resources.Load<Sprite>("Sprites/Clicker Sprite");
+        clickerObj.AddComponent<ClickerMethods>();
     }
 
     public void IncreaseUpgradePrice(TextMeshProUGUI textToChange, int currentPrice)
