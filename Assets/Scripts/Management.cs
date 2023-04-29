@@ -30,7 +30,9 @@ public class Management : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cakeAmountText.text = "Cakes: " + StaticValues.currentCakes.ToString();
+        int currentCakes = (int)StaticValues.currentCakes;
+
+        cakeAmountText.text = "Cakes: " + currentCakes.ToString();
         cakesPerSecond.text = "per second: " + StaticValues.cakesPerSecond.ToString();
     }
 }
