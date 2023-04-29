@@ -6,6 +6,5 @@ using UnityEngine;
 
 public static class StaticValues
 {
-    public static int currentCakes = 0;
-    public static int clickAmount = 1;
+    public static int currentCakes = 0, clickAmount = 1, cakesPerSecond = 1;
 }
