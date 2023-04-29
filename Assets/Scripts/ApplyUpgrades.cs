@@ -21,6 +21,19 @@ public class ApplyUpgrades : MonoBehaviour
         
     }
 
+    public void IncreaseCakesPerSecond()
+    {
+        TextMeshProUGUI priceText = transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
+        int upgradePrice = int.Parse(priceText.text);
+
+        if (StaticValues.currentCakes >= upgradePrice) 
+        {
+            StaticValues.cakesPerSecond = StaticValues.cakesPerSecond + 0.1f;
+            StaticValues.currentCakes = StaticValues.currentCakes - upgradePrice;
+            IncreaseUpgradePrice(priceText, upgradePrice);
+        }
+    }
+
     public void IncreaseUpgradePrice(TextMeshProUGUI textToChange, int currentPrice)
     {
         currentPrice = currentPrice * 3;
