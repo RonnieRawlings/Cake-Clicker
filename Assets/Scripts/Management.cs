@@ -35,10 +35,14 @@ public class Management : MonoBehaviour
 
     public IEnumerator AnimateClickers()
     {
-        StaticValues.clickers[0].transform.localPosition = StaticValues.clickers[0].transform.localPosition + (StaticValues.clickers[0].transform.up * 5);
-        yield return new WaitForSeconds(1f);
-        StaticValues.clickers[0].transform.localPosition = StaticValues.clickers[0].transform.localPosition - (StaticValues.clickers[0].transform.up * 5);
-        yield return new WaitForSeconds(1f);
+        foreach (GameObject clicker in StaticValues.clickers)
+        {
+            clicker.transform.localPosition = clicker.transform.localPosition + (clicker.transform.up * 5);
+            yield return new WaitForSeconds(0.25f);
+            clicker.transform.localPosition = clicker.transform.localPosition - (clicker.transform.up * 5);
+            yield return new WaitForSeconds(0.25f);
+        }
+        
         StartCoroutine(AnimateClickers());
     }
 
