@@ -11,8 +11,7 @@ public class ClickerMethods : MonoBehaviour
 
     void Start()
     {
-        rectTransform = GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = new Vector2(0, -100);
+        rectTransform = GetComponent<RectTransform>();       
     }
 
     private void Update()

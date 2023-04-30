@@ -22,9 +22,20 @@ public class Management : MonoBehaviour
         StartCoroutine(AddCPS());
     }
 
+    public void FillClickers()
+    {
+        GameObject parent = GameObject.Find("CakeCanvas").transform.GetChild(1).GetChild(2).gameObject;
+
+        foreach (Transform child in parent.transform)
+        {
+            StaticValues.clickers.Add(child.gameObject);
+        }
+    }
+
     private void Start()
     {
         StartCoroutine(AddCPS());
+        FillClickers();
     }
 
     // Update is called once per frame

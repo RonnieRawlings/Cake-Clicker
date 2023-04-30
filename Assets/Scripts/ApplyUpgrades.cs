@@ -20,8 +20,20 @@ public class ApplyUpgrades : MonoBehaviour
             StaticValues.cakesPerSecond += 0.1f;
             StaticValues.currentCakes -= upgradePrice;
             IncreaseUpgradePrice(priceText, upgradePrice);
-            SpawnClicker();
+            EnableClicker();
         }      
+    }
+
+    public void EnableClicker()
+    {
+        foreach (GameObject clicker in StaticValues.clickers)
+        {
+            if (!clicker.GetComponent<Image>().enabled)
+            {
+                clicker.GetComponent<Image>().enabled = true;
+                break;
+            }
+        }
     }
 
     public void IncreaseClickAmount()
@@ -35,17 +47,6 @@ public class ApplyUpgrades : MonoBehaviour
             StaticValues.currentCakes = StaticValues.currentCakes - upgradePrice;
             IncreaseUpgradePrice(priceText, upgradePrice);
         }
-    }
-
-    public void SpawnClicker()
-    {
-        GameObject clickerObj = new GameObject("Clicker");
-        clickerObj.transform.SetParent(theCake.transform);
-        clickerObj.transform.localScale = new Vector3(0.25f, 0.25f, 0);
-
-        Image image = clickerObj.AddComponent<Image>();
-        image.sprite = Resources.Load<Sprite>("Sprites/Clicker Sprite");
-        clickerObj.AddComponent<ClickerMethods>();
     }
 
     public void IncreaseUpgradePrice(TextMeshProUGUI textToChange, int currentPrice)
