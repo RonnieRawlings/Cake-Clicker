@@ -16,6 +16,6 @@ public class ClickerMethods : MonoBehaviour
 
     private void Update()
     {
-        rectTransform.RotateAround(rectTransform.parent.position, Vector3.forward, speed * Time.deltaTime);
+        rectTransform.RotateAround(rectTransform.parent.position, transform.forward, speed * Time.deltaTime);
     }
 }

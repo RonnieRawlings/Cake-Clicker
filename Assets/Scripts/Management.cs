@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using TreeEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -32,10 +33,20 @@ public class Management : MonoBehaviour
         }
     }
 
+    public IEnumerator AnimateClickers()
+    {
+        StaticValues.clickers[0].transform.localPosition = StaticValues.clickers[0].transform.localPosition + (StaticValues.clickers[0].transform.up * 5);
+        yield return new WaitForSeconds(1f);
+        StaticValues.clickers[0].transform.localPosition = StaticValues.clickers[0].transform.localPosition - (StaticValues.clickers[0].transform.up * 5);
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(AnimateClickers());
+    }
+
     private void Start()
     {
         StartCoroutine(AddCPS());
         FillClickers();
+        StartCoroutine(AnimateClickers());
     }
 
     // Update is called once per frame
