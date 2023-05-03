@@ -7,26 +7,32 @@ using UnityEngine.UI;
 
 public class ChangeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public TextMeshProUGUI infoText;
+    public TextMeshProUGUI infoText, titleText, priceText;
     public Image infoBackground;
-    public string info;
+    public string info, title, price;
     
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        infoText.text = info;
+        titleText.text = title;
+        infoText.text = info;     
+        priceText.text = price;
         infoBackground.enabled = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        infoText.text = "";
+        titleText.text = "";
+        infoText.text = "";     
+        priceText.text = "";
         infoBackground.enabled = false;
     }
 
     private void OnDisable()
     {
+        titleText.text = "";
         infoText.text = "";
+        priceText.text = "";
         infoBackground.enabled = false;
     }
 }

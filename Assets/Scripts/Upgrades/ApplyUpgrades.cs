@@ -13,6 +13,8 @@ public class ApplyUpgrades : MonoBehaviour
 
         if (StaticValues.currentCakes >= upgradePrice)
         {
+            StaticValues.currentCakes -= upgradePrice;
+
             StaticValues.clickerCPS = StaticValues.clickerCPS * 2;
             StaticValues.cakesPerSecond -= StaticValues.totalClickerCPS;
             StaticValues.totalClickerCPS = StaticValues.totalClickerCPS * 2;
