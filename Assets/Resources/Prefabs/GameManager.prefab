@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2209766605353017443}
   - component: {fileID: 7717426786453305235}
   - component: {fileID: 6538912631012524320}
+  - component: {fileID: 3978910133033058470}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -57,3 +58,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a6a2c81642a8f488864afe933ee4a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cakeAmountText: {fileID: 0}
+  cakesPerSecond: {fileID: 0}
+--- !u!114 &3978910133033058470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209766605353017442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5125e55ac5608e3439f0282d2506526d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickerUpgrades:
+  - {fileID: 0}
+  purchasedUpgrades: 00

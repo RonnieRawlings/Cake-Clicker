@@ -4501,18 +4501,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1824595748}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1811212451}
         m_TargetAssemblyTypeName: Management, Assembly-CSharp
         m_MethodName: ResetSelectedButton
@@ -4737,10 +4725,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1811212451}
-        m_TargetAssemblyTypeName: Management, Assembly-CSharp
-        m_MethodName: ResetSelectedButton
-        m_Mode: 1
+      - m_Target: {fileID: 1824595748}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5439,6 +5427,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3978910133033058470, guid: 5d94e118a44a48a488aebeeb6c01c120, type: 3}
+      propertyPath: clickerUpgrades.Array.data[0]
+      value: 
+      objectReference: {fileID: 1824595748}
     - target: {fileID: 6538912631012524320, guid: 5d94e118a44a48a488aebeeb6c01c120, type: 3}
       propertyPath: cakeAmountText
       value: 
