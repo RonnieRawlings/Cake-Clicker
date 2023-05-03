@@ -4641,6 +4641,7 @@ GameObject:
   - component: {fileID: 1824595752}
   - component: {fileID: 1824595751}
   - component: {fileID: 1824595750}
+  - component: {fileID: 1824595754}
   - component: {fileID: 1824595753}
   m_Layer: 5
   m_Name: Upgrade Clickers
@@ -4716,7 +4717,7 @@ MonoBehaviour:
       - m_Target: {fileID: 424087440}
         m_TargetAssemblyTypeName: ApplyUpgrades, Assembly-CSharp
         m_MethodName: ClickerUpgrade
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4725,10 +4726,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1824595748}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1811212451}
+        m_TargetAssemblyTypeName: Management, Assembly-CSharp
+        m_MethodName: ResetSelectedButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4790,6 +4791,19 @@ MonoBehaviour:
   infoText: {fileID: 186231757}
   infoBackground: {fileID: 1997064988}
   info: Doubles Clicker gains per second!
+--- !u!114 &1824595754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824595748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f15861a87ae1764bb9dfacbed1d112d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradePrice: 50
 --- !u!1 &1946944180
 GameObject:
   m_ObjectHideFlags: 0

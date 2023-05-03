@@ -23,4 +23,10 @@ public class ChangeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         infoText.text = "";
         infoBackground.enabled = false;
     }
+
+    private void OnDisable()
+    {
+        infoText.text = "";
+        infoBackground.enabled = false;
+    }
 }

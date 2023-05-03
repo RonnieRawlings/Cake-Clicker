@@ -7,11 +7,18 @@ using UnityEngine;
 
 public class ApplyUpgrades : MonoBehaviour
 {
-    public void ClickerUpgrade()
+    public void ClickerUpgrade(int upgradeNum)
     {
-        StaticValues.clickerCPS = StaticValues.clickerCPS * 2;
-        StaticValues.cakesPerSecond -= StaticValues.totalClickerCPS;
-        StaticValues.totalClickerCPS = StaticValues.totalClickerCPS * 2;
-        StaticValues.cakesPerSecond += StaticValues.totalClickerCPS;
+        int upgradePrice = transform.GetChild(upgradeNum).GetComponent<UpgradeValues>().upgradePrice;
+
+        if (StaticValues.currentCakes >= upgradePrice)
+        {
+            StaticValues.clickerCPS = StaticValues.clickerCPS * 2;
+            StaticValues.cakesPerSecond -= StaticValues.totalClickerCPS;
+            StaticValues.totalClickerCPS = StaticValues.totalClickerCPS * 2;
+            StaticValues.cakesPerSecond += StaticValues.totalClickerCPS;
+
+            transform.GetChild(upgradeNum).gameObject.SetActive(false);
+        }     
     }
 }
