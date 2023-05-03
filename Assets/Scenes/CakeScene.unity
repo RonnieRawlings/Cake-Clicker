@@ -4803,7 +4803,7 @@ MonoBehaviour:
   infoBackground: {fileID: 1997064988}
   info: Adds one Clicker to the Cake.
   title: Clicker
-  price: 
+  price: 5
 --- !u!1 &1762412901
 GameObject:
   m_ObjectHideFlags: 0

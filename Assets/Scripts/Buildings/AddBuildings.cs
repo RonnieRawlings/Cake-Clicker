@@ -37,5 +37,6 @@ public class AddBuildings : MonoBehaviour
     {
         currentPrice = currentPrice * 3;
         textToChange.text = currentPrice.ToString();
+        textToChange.gameObject.GetComponentInParent<ChangeInfo>().UpdateInfo(currentPrice.ToString());
     }
 }

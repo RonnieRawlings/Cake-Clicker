@@ -28,6 +28,11 @@ public class ChangeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         infoBackground.enabled = false;
     }
 
+    public void UpdateInfo(string newPrice)
+    {
+        price = newPrice;
+    }
+
     private void OnDisable()
     {
         titleText.text = "";
