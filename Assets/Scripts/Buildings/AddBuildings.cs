@@ -13,6 +13,8 @@ public class AddBuildings : MonoBehaviour
     public void AddClicker()
     {
         TextMeshProUGUI priceText = transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI amountOwnedText = transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>();       
+
         int upgradePrice = int.Parse(priceText.text);
 
         if (StaticValues.currentCakes >= upgradePrice) 
@@ -29,6 +31,16 @@ public class AddBuildings : MonoBehaviour
                     clicker.GetComponent<Image>().enabled = true;
                     break;
                 }
+            }
+
+            if (amountOwnedText.text == "")
+            {
+                amountOwnedText.text = "1";
+            }
+            else
+            {
+                int currentOwned = int.Parse(amountOwnedText.text);
+                amountOwnedText.text = (currentOwned + 1).ToString();
             }
         }      
     }
