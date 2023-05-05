@@ -59,6 +59,24 @@ public class Management : MonoBehaviour
         text.resizeTextForBestFit = true;
         text.text = "+" + StaticValues.clickAmount.ToString();
         text.font = textFont;
+
+        StartCoroutine(FadeOut(textObject));
+    }
+
+    IEnumerator FadeOut(GameObject obj)
+    {
+        CanvasGroup canvasGroup = obj.AddComponent<CanvasGroup>();
+        float duration = 3f;
+        float timeElapsed = 0f;
+
+        while (timeElapsed < duration)
+        {
+            canvasGroup.alpha = 1 - (timeElapsed / duration);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        Destroy(obj);
     }
 
     private void Start()
