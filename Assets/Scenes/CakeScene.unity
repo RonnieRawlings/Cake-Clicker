@@ -1023,6 +1023,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1811212451}
+        m_TargetAssemblyTypeName: Management, Assembly-CSharp
+        m_MethodName: SpawnNumberText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &302015662
 GameObject:
   m_ObjectHideFlags: 0
@@ -5725,6 +5737,14 @@ PrefabInstance:
       propertyPath: clickerUpgrades.Array.data[0]
       value: 
       objectReference: {fileID: 1824595748}
+    - target: {fileID: 6538912631012524320, guid: 5d94e118a44a48a488aebeeb6c01c120, type: 3}
+      propertyPath: textFont
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 6538912631012524320, guid: 5d94e118a44a48a488aebeeb6c01c120, type: 3}
+      propertyPath: cakeCanvas
+      value: 
+      objectReference: {fileID: 132742632}
     - target: {fileID: 6538912631012524320, guid: 5d94e118a44a48a488aebeeb6c01c120, type: 3}
       propertyPath: cakeAmountText
       value: 

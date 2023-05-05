@@ -1,14 +1,16 @@
 // Author - Ronnie Rawlings.
 
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Management : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI cakeAmountText, cakesPerSecond;
+    [SerializeField] private Canvas cakeCanvas;
+    [SerializeField] private Font textFont;
 
     public void ResetSelectedButton()
     {
@@ -43,6 +45,20 @@ public class Management : MonoBehaviour
         }
         
         StartCoroutine(AnimateClickers());
+    }
+
+    public void SpawnNumberText()
+    {
+        GameObject textObject = new GameObject();
+        textObject.transform.SetParent(cakeCanvas.transform);
+
+        textObject.transform.position = Input.mousePosition;
+        Text text = textObject.AddComponent<Text>();
+
+        text.raycastTarget = false;
+        text.resizeTextForBestFit = true;
+        text.text = "+" + StaticValues.clickAmount.ToString();
+        text.font = textFont;
     }
 
     private void Start()
