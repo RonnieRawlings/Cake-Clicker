@@ -60,6 +60,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cakeAmountText: {fileID: 0}
   cakesPerSecond: {fileID: 0}
+  cakeCanvas: {fileID: 0}
+  textFont: {fileID: 0}
 --- !u!114 &3978910133033058470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,4 +76,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickerUpgrades:
   - {fileID: 0}
-  purchasedUpgrades: 00
+  - {fileID: 0}
+  - {fileID: 0}
+  purchasedUpgrades: 000000

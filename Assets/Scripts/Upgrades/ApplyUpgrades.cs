@@ -7,9 +7,12 @@ using UnityEngine;
 
 public class ApplyUpgrades : MonoBehaviour
 {
+    public List<Transform> upgradePositions = new List<Transform>();
+
     public void ClickerUpgrade(int upgradeNum)
     {
-        int upgradePrice = transform.GetChild(upgradeNum).GetComponent<UpgradeValues>().upgradePrice;
+        GameObject upgrade = upgradePositions[FindUpgrade("Upgrade Clickers " + upgradeNum.ToString())].GetChild(0).gameObject;
+        int upgradePrice = upgrade.GetComponent<UpgradeValues>().upgradePrice;
 
         if (StaticValues.currentCakes >= upgradePrice)
         {
@@ -22,7 +25,25 @@ public class ApplyUpgrades : MonoBehaviour
             StaticValues.totalClickerCPS = StaticValues.totalClickerCPS * 2;
             StaticValues.cakesPerSecond += StaticValues.totalClickerCPS;
 
-            transform.GetChild(upgradeNum).gameObject.SetActive(false);
+            upgrade.transform.SetParent(transform.GetChild(0));
+            upgrade.transform.SetSiblingIndex(upgradeNum - 1);
+            upgrade.SetActive(false);
         }     
+    }
+
+    public int FindUpgrade(string upgradeName)
+    {
+        for (int index = 0; index < upgradePositions.Count; index++)
+        {
+            if (upgradePositions[index].childCount != 0)
+            {
+                if (upgradePositions[index].GetChild(0).name == upgradeName)
+                {
+                    return index;
+                }
+            }
+        }
+
+        return 4;
     }
 }
