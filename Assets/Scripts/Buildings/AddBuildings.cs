@@ -12,8 +12,8 @@ public class AddBuildings : MonoBehaviour
 
     public void AddClicker()
     {
-        TextMeshProUGUI priceText = transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI amountOwnedText = transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>();       
+        TextMeshProUGUI priceText = transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI amountOwnedText = transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>();       
 
         int upgradePrice = int.Parse(priceText.text);
 
