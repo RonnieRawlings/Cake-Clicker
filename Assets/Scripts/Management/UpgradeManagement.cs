@@ -12,16 +12,21 @@ public class UpgradeManagement : MonoBehaviour
 
     public void VisibleClickerUpgrades()
     {
-        if (StaticValues.totalClickerCPS != 0f)
+        if (StaticValues.CountEnabledClickers() > 0 && !purchasedUpgrades[0])
         {
-            if (!purchasedUpgrades[0])
-            {
-                clickerUpgrades[0].SetActive(true);
-                purchasedUpgrades[0] = true;
+            purchasedUpgrades[0] = true;
+            clickerUpgrades[0].SetActive(true);
+            
+            clickerUpgrades[0].transform.parent = upgradePositions[FindOpenPosition()].transform;
+            clickerUpgrades[0].transform.position = clickerUpgrades[0].transform.parent.position;
+        }
+        else if (StaticValues.CountEnabledClickers() >= 5 && !purchasedUpgrades[1])
+        {
+            purchasedUpgrades[1] = true;
+            clickerUpgrades[1].SetActive(true);
 
-                clickerUpgrades[0].transform.parent = upgradePositions[FindOpenPosition()].transform;
-                clickerUpgrades[0].transform.position = clickerUpgrades[0].transform.parent.position;
-            }            
+            clickerUpgrades[1].transform.parent = upgradePositions[FindOpenPosition()].transform;
+            clickerUpgrades[1].transform.position = clickerUpgrades[1].transform.parent.position;
         }
     }
 

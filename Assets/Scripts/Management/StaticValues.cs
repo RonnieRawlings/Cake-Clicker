@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public static class StaticValues
 {
@@ -19,4 +20,19 @@ public static class StaticValues
     public static float clickerCPS = 0.1f, totalClickerCPS;
 
     #endregion
+
+    public static int CountEnabledClickers()
+    {
+        int count = 0;
+
+        foreach (GameObject clicker in clickers)
+        {
+            if (clicker.GetComponent<Image>().enabled == true)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
 }
