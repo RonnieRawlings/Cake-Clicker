@@ -1374,7 +1374,7 @@ MonoBehaviour:
   infoBackground: {fileID: 1997064988}
   info: Adds one Clicker to the Cake.
   title: Clicker
-  price: 5
+  price: 0
 --- !u!1 &288439640
 GameObject:
   m_ObjectHideFlags: 0
@@ -6401,7 +6401,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
