@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeManagement : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class UpgradeManagement : MonoBehaviour
         {
             if (upgradePositions[index].childCount == 0)
             {
+                upgradePositions[index].GetComponent<Image>().enabled = true;
                 return index;
             }
         }

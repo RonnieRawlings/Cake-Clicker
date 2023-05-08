@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ApplyUpgrades : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class ApplyUpgrades : MonoBehaviour
             upgrade.transform.SetParent(transform.GetChild(0));
             upgrade.transform.SetSiblingIndex(upgradeNum - 1);
             upgrade.SetActive(false);
+            upgrade.GetComponentInParent<Image>().enabled = false;
 
             RepositionUpgrades();
         }     
