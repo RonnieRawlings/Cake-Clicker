@@ -21,6 +21,12 @@ public static class StaticValues
 
     #endregion
 
+    #region Plantation Values
+
+    public static float plantationCPS = 5.0f, totalPlantations = 0;
+
+    #endregion
+
     public static int CountEnabledClickers()
     {
         int count = 0;

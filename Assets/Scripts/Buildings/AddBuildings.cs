@@ -42,7 +42,7 @@ public class AddBuildings : MonoBehaviour
 
             if (allEnabled)
             {
-                PreventFurtherClickers(amountOwnedText, priceText);
+                PreventFurtherBuildings(amountOwnedText, priceText);
             }
             else
             {
@@ -64,13 +64,39 @@ public class AddBuildings : MonoBehaviour
         }      
     }
 
-    public void PreventFurtherClickers(TextMeshProUGUI amountOwnedText, TextMeshProUGUI priceText)
+    public void PreventFurtherBuildings(TextMeshProUGUI amountOwnedText, TextMeshProUGUI priceText)
     {
         amountOwnedText.text = "MAX";
         priceText.text = "-";
 
         GameObject clickerBuilding = transform.GetChild(0).gameObject;
         clickerBuilding.GetComponent<Button>().interactable = false;
+    }
+
+    public void AddPlantation()
+    {
+        TextMeshProUGUI priceText = transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI amountOwnedText = transform.GetChild(1).GetChild(3).GetComponent<TextMeshProUGUI>();
+
+        int upgradePrice = int.Parse(priceText.text);
+
+        if (StaticValues.currentCakes >= upgradePrice)
+        {
+            if (amountOwnedText.text == "")
+            {
+                amountOwnedText.text = "1";
+            }
+            else
+            {
+                int currentOwned = int.Parse(amountOwnedText.text);
+                amountOwnedText.text = (currentOwned + 1).ToString();
+            }
+
+            StaticValues.cakesPerSecond += StaticValues.plantationCPS;
+            StaticValues.totalPlantations++;
+            StaticValues.currentCakes -= upgradePrice;
+            IncreaseUpgradePrice(priceText, upgradePrice);
+        }
     }
 
     public void IncreaseUpgradePrice(TextMeshProUGUI textToChange, int currentPrice)
