@@ -28,6 +28,8 @@ public class ApplyUpgrades : MonoBehaviour
             upgrade.transform.SetParent(transform.GetChild(0));
             upgrade.transform.SetSiblingIndex(upgradeNum - 1);
             upgrade.SetActive(false);
+
+            RepositionUpgrades();
         }     
     }
 
@@ -45,5 +47,24 @@ public class ApplyUpgrades : MonoBehaviour
         }
 
         return 4;
+    }
+
+    public void RepositionUpgrades()
+    {
+        for (int index = 0; index < upgradePositions.Count; index++)
+        {
+            if (upgradePositions[index].childCount == 0)
+            {
+                for (int next = index + 1; next < upgradePositions.Count; next++)
+                {
+                    if (upgradePositions[next].childCount != 0)
+                    {
+                        upgradePositions[next].GetChild(0).parent = upgradePositions[index];
+                        upgradePositions[index].GetChild(0).position = upgradePositions[index].position;
+                        break;
+                    }
+                }
+            }
+        }
     }
 }
