@@ -87,6 +87,8 @@ public class Management : MonoBehaviour
 
         Transform buildingsVisualised = GameObject.Find("CakeCanvas").transform.Find("BuildingsVisualised");
         StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(0).GetChild(1), StaticValues.plantations);
+
+        Screen.fullScreen = false;
     }
 
     // Update is called once per frame
@@ -96,5 +98,10 @@ public class Management : MonoBehaviour
 
         cakeAmountText.text = "Cakes: " + currentCakes.ToString();
         cakesPerSecond.text = "per second: " + StaticValues.cakesPerSecond.ToString();
+
+        if (Screen.fullScreen)
+        {
+            Screen.fullScreen = false;
+        }
     }
 }
