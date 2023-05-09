@@ -23,6 +23,7 @@ public static class StaticValues
 
     #region Plantation Values
 
+    public static List<GameObject> plantations = new List<GameObject>();
     public static float plantationCPS = 10.0f, totalPlantations = 0;
 
     #endregion
@@ -40,5 +41,13 @@ public static class StaticValues
         }
 
         return count;
+    }
+
+    public static void FillBuildingVisualSlots(Transform buildingSprites, List<GameObject> listToFill)
+    {
+        foreach (Transform child in buildingSprites)
+        {
+            listToFill.Add(child.gameObject);
+        }
     }
 }

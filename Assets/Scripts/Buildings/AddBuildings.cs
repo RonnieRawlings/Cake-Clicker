@@ -85,10 +85,19 @@ public class AddBuildings : MonoBehaviour
             if (amountOwnedText.text == "")
             {
                 amountOwnedText.text = "1";
+
+                StaticValues.plantations[0].transform.parent.parent.gameObject.SetActive(true);
+                StaticValues.plantations[0].GetComponent<Image>().enabled = true;
             }
             else
             {
                 int currentOwned = int.Parse(amountOwnedText.text);
+
+                if (StaticValues.plantations.Count > currentOwned)
+                {
+                    StaticValues.plantations[currentOwned].GetComponent<Image>().enabled = true;
+                }
+                
                 amountOwnedText.text = (currentOwned + 1).ToString();
             }
 
