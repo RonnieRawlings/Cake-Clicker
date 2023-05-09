@@ -17,13 +17,13 @@ public static class StaticValues
     #region Clicker Values
 
     public static List<GameObject> clickers = new List<GameObject>();
-    public static float clickerCPS = 0.1f, totalClickerCPS;
+    public static float clickerCPS = 0.5f, totalClickerCPS;
 
     #endregion
 
     #region Plantation Values
 
-    public static float plantationCPS = 5.0f, totalPlantations = 0;
+    public static float plantationCPS = 10.0f, totalPlantations = 0;
 
     #endregion
 
