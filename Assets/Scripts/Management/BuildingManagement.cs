@@ -20,6 +20,8 @@ public class BuildingManagement : MonoBehaviour
                 if (building.GetComponentInParent<Button>().interactable == false)
                 {
                     building.GetComponentInParent<Button>().interactable = true;
+                    UsefulMethods.ChangeTextColour(building.gameObject.transform.parent.GetChild(0).GetComponent<TextMeshProUGUI>(), "#FFFFFF");
+                    UsefulMethods.ChangeTextColour(building.gameObject.transform.parent.GetChild(1).GetComponent<TextMeshProUGUI>(), "#FFFFFF");
                 }
             }
         }
