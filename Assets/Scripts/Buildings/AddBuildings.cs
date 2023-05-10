@@ -12,10 +12,9 @@ public class AddBuildings : MonoBehaviour
 
     public void AddClicker()
     {
-        TextMeshProUGUI priceText = transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI amountOwnedText = transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>();       
 
-        int upgradePrice = int.Parse(priceText.text);
+        int upgradePrice = int.Parse(StaticValues.buildingPrices[0].text);
         bool allEnabled = true;
 
         if (StaticValues.currentCakes >= upgradePrice) 
@@ -42,7 +41,7 @@ public class AddBuildings : MonoBehaviour
 
             if (allEnabled)
             {
-                PreventFurtherBuildings(amountOwnedText, priceText);
+                PreventFurtherBuildings(amountOwnedText, StaticValues.buildingPrices[0]);
             }
             else
             {
@@ -59,7 +58,7 @@ public class AddBuildings : MonoBehaviour
                 StaticValues.cakesPerSecond += StaticValues.clickerCPS;
                 StaticValues.totalClickerCPS += StaticValues.clickerCPS;
                 StaticValues.currentCakes -= upgradePrice;
-                IncreaseUpgradePrice(priceText, upgradePrice);
+                IncreaseUpgradePrice(StaticValues.buildingPrices[0], upgradePrice);
             }           
         }      
     }
@@ -75,10 +74,9 @@ public class AddBuildings : MonoBehaviour
 
     public void AddPlantation()
     {
-        TextMeshProUGUI priceText = transform.GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI amountOwnedText = transform.GetChild(1).GetChild(3).GetComponent<TextMeshProUGUI>();
 
-        int upgradePrice = int.Parse(priceText.text);
+        int upgradePrice = int.Parse(StaticValues.buildingPrices[1].text);
 
         if (StaticValues.currentCakes >= upgradePrice)
         {
@@ -104,7 +102,7 @@ public class AddBuildings : MonoBehaviour
             StaticValues.cakesPerSecond += StaticValues.plantationCPS;
             StaticValues.totalPlantations++;
             StaticValues.currentCakes -= upgradePrice;
-            IncreaseUpgradePrice(priceText, upgradePrice);
+            IncreaseUpgradePrice(StaticValues.buildingPrices[1], upgradePrice);
         }
     }
 

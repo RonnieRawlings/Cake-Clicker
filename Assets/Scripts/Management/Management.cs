@@ -84,10 +84,7 @@ public class Management : MonoBehaviour
         StartCoroutine(AddCPS());
         FillClickers();
         StartCoroutine(AnimateClickers());
-
-        Transform buildingsVisualised = GameObject.Find("CakeCanvas").transform.Find("BuildingsVisualised");
-        StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(0).GetChild(1), StaticValues.plantations);
-
+        
         Screen.fullScreen = false;
     }
 

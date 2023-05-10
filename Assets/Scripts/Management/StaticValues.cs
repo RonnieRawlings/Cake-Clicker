@@ -2,6 +2,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public static class StaticValues
 
     public static float currentCakes = 0, clickAmount = 1;
     public static float cakesPerSecond = 0.0f;
+    public static List<TextMeshProUGUI> buildingPrices = new List<TextMeshProUGUI>();
 
     #endregion
 

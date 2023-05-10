@@ -1,0 +1,40 @@
+// Author - Ronnie Rawlings.
+
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class BuildingManagement : MonoBehaviour
+{
+    public List<TextMeshProUGUI> buildingPrices = new List<TextMeshProUGUI>();
+
+    public void EnableBuilding()
+    {
+        foreach (TextMeshProUGUI building in StaticValues.buildingPrices)
+        {
+            if (StaticValues.currentCakes >= int.Parse(building.text))
+            {
+                if (building.GetComponentInParent<Button>().interactable == false)
+                {
+                    building.GetComponentInParent<Button>().interactable = true;
+                }
+            }
+        }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Transform buildingsVisualised = GameObject.Find("CakeCanvas").transform.Find("BuildingsVisualised");
+        StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(0).GetChild(1), StaticValues.plantations);
+        StaticValues.buildingPrices = buildingPrices;    
+    }
+
+    void Update()
+    {
+        EnableBuilding();
+    }
+}
