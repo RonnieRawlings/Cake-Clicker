@@ -109,7 +109,7 @@ public class AddBuildings : MonoBehaviour
     public void IncreaseUpgradePrice(TextMeshProUGUI textToChange, int currentPrice)
     {
         currentPrice = currentPrice * 3;
-        textToChange.text = currentPrice.ToString();
+        textToChange.text = currentPrice.ToString("N0");
         textToChange.gameObject.GetComponentInParent<ChangeInfo>().UpdateInfo(currentPrice.ToString());
     }
 }

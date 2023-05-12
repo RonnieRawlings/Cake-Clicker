@@ -93,7 +93,7 @@ public class Management : MonoBehaviour
     {
         int currentCakes = (int)StaticValues.currentCakes;
 
-        cakeAmountText.text = "Cakes: " + currentCakes.ToString();
+        cakeAmountText.text = "Cakes: " + currentCakes.ToString("N0");
         cakesPerSecond.text = "per second: " + StaticValues.cakesPerSecond.ToString();
 
         if (Screen.fullScreen)
