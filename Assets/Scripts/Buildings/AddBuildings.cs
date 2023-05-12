@@ -14,7 +14,7 @@ public class AddBuildings : MonoBehaviour
     {
         TextMeshProUGUI amountOwnedText = transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>();       
 
-        int upgradePrice = int.Parse(StaticValues.buildingPrices[0].text);
+        int upgradePrice = int.Parse(StaticValues.buildingPrices[0].text.Replace(",", ""));
         bool allEnabled = true;
 
         if (StaticValues.currentCakes >= upgradePrice) 
@@ -76,7 +76,7 @@ public class AddBuildings : MonoBehaviour
     {
         TextMeshProUGUI amountOwnedText = transform.GetChild(1).GetChild(3).GetComponent<TextMeshProUGUI>();
 
-        int upgradePrice = int.Parse(StaticValues.buildingPrices[1].text);
+        int upgradePrice = int.Parse(StaticValues.buildingPrices[1].text.Replace(",", ""));
 
         if (StaticValues.currentCakes >= upgradePrice)
         {
