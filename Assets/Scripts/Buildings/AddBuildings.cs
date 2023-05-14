@@ -106,6 +106,11 @@ public class AddBuildings : MonoBehaviour
         }
     }
 
+    public void AddFactory()
+    {
+        TextMeshProUGUI amountOwnedText = transform.GetChild(2).GetChild(3).GetComponent<TextMeshProUGUI>();
+    }
+
     public void IncreaseUpgradePrice(TextMeshProUGUI textToChange, int currentPrice)
     {
         currentPrice = currentPrice * 3;

@@ -30,6 +30,13 @@ public static class StaticValues
 
     #endregion
 
+    #region Factory Values
+
+    public static List<GameObject> factories = new List<GameObject>();
+    public static float factoryCPS = 50.0f, totalFactories = 0;
+
+    #endregion
+
     public static int CountEnabledClickers()
     {
         int count = 0;

@@ -38,7 +38,8 @@ public class ChangeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             Dictionary<string, string> cpsValues = new Dictionary<string, string>
             {
                 { "AddClicker", cps + StaticValues.clickerCPS + " cakes per second." },
-                { "AddPlantation", cps + StaticValues.plantationCPS + " cakes per second" }
+                { "AddPlantation", cps + StaticValues.plantationCPS + " cakes per second" },
+                { "AddFactory", cps + StaticValues.factoryCPS + " cakes per second" }
             };
 
             if (cpsValues.ContainsKey(transform.name))
