@@ -54,6 +54,26 @@ public class ApplyUpgrades : MonoBehaviour
         }
     }
 
+    public void FactoryUpgrade(int upgradeNum)
+    {
+        GameObject upgrade = upgradePositions[FindUpgrade("Upgrade Factory " + upgradeNum.ToString())].GetChild(0).gameObject;
+        int upgradePrice = upgrade.GetComponent<UpgradeValues>().upgradePrice;
+
+        if (StaticValues.currentCakes >= upgradePrice)
+        {
+            StaticValues.currentCakes -= upgradePrice;
+            StaticValues.cakesPerSecond -= (StaticValues.totalFactories * StaticValues.factoryCPS);
+            StaticValues.factoryCPS = StaticValues.factoryCPS * 2;
+            StaticValues.cakesPerSecond += (StaticValues.totalFactories * StaticValues.factoryCPS);
+
+            upgrade.transform.SetParent(transform.GetChild(0));
+            upgrade.transform.SetSiblingIndex(upgradeNum - 1);
+            upgrade.SetActive(false);
+
+            RepositionUpgrades();
+        }
+    }
+
     public int FindUpgrade(string upgradeName)
     {
         for (int index = 0; index < upgradePositions.Count; index++)
