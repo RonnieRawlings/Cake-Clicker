@@ -13,7 +13,6 @@ public class AddBuildings : MonoBehaviour
     public void AddClicker()
     {
         TextMeshProUGUI amountOwnedText = transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>();       
-
         int upgradePrice = int.Parse(StaticValues.buildingPrices[0].text.Replace(",", ""));
         bool allEnabled = true;
 
@@ -75,7 +74,6 @@ public class AddBuildings : MonoBehaviour
     public void AddPlantation()
     {
         TextMeshProUGUI amountOwnedText = transform.GetChild(1).GetChild(3).GetComponent<TextMeshProUGUI>();
-
         int upgradePrice = int.Parse(StaticValues.buildingPrices[1].text.Replace(",", ""));
 
         if (StaticValues.currentCakes >= upgradePrice)
@@ -109,6 +107,34 @@ public class AddBuildings : MonoBehaviour
     public void AddFactory()
     {
         TextMeshProUGUI amountOwnedText = transform.GetChild(2).GetChild(3).GetComponent<TextMeshProUGUI>();
+        int upgradePrice = int.Parse(StaticValues.buildingPrices[2].text.Replace(",", ""));
+
+        if (StaticValues.currentCakes >= upgradePrice)
+        {
+            if (amountOwnedText.text == "")
+            {
+                amountOwnedText.text = "1";
+
+                StaticValues.factories[0].transform.parent.parent.gameObject.SetActive(true);
+                StaticValues.factories[0].GetComponent<Image>().enabled = true;
+            }
+            else
+            {
+                int currentOwned = int.Parse(amountOwnedText.text);
+
+                if (StaticValues.factories.Count > currentOwned)
+                {
+                    StaticValues.factories[currentOwned].GetComponent<Image>().enabled = true;
+                }
+
+                amountOwnedText.text = (currentOwned + 1).ToString();
+            }
+
+            StaticValues.cakesPerSecond += StaticValues.factoryCPS;
+            StaticValues.totalFactories++;
+            StaticValues.currentCakes -= upgradePrice;
+            IncreaseUpgradePrice(StaticValues.buildingPrices[2], upgradePrice);
+        }
     }
 
     public void IncreaseUpgradePrice(TextMeshProUGUI textToChange, int currentPrice)

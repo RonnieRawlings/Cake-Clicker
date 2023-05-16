@@ -32,6 +32,7 @@ public class BuildingManagement : MonoBehaviour
     {
         Transform buildingsVisualised = GameObject.Find("CakeCanvas").transform.Find("BuildingsVisualised");
         StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(0).GetChild(1), StaticValues.plantations);
+        StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(1).GetChild(1), StaticValues.factories);
         StaticValues.buildingPrices = buildingPrices;    
     }
 
