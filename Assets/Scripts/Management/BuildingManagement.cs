@@ -15,7 +15,11 @@ public class BuildingManagement : MonoBehaviour
     {
         foreach (TextMeshProUGUI building in StaticValues.buildingPrices)
         {
-            if (StaticValues.currentCakes >= int.Parse(building.text.Replace(",", "")))
+            if (building.text == "-")
+            {
+
+            }
+            else if (StaticValues.currentCakes >= int.Parse(building.text.Replace(",", "")))
             {
                 if (building.GetComponentInParent<Button>().interactable == false)
                 {

@@ -15,35 +15,75 @@ public class UpgradeManagement : MonoBehaviour
     public List<GameObject> plantationUpgrades = new List<GameObject>();
     public List<bool> hasPurchasedPlantationUpgrade = new List<bool>();
 
+    public List<GameObject> factoryUpgrades = new List<GameObject>();
+    public List<bool> hasPurchasedFactoryUpgrade = new List<bool>();
+
     #endregion
 
     public List<Transform> upgradePositions = new List<Transform>();
+    public int clickerOffset = 0, plantationOffset = 0, factoryOffset = 0;
 
     public void VisibleClickerUpgrades()
     {
         int enabledClickers = StaticValues.CountEnabledClickers();
-        for (int i = 0; i < clickerUpgrades.Count; i++)
+        if (FindOpenPosition() == 5)
         {
-            if (enabledClickers >= (i == 0 ? 1 : i * 5) && !hasPurchasedClickerUpgrade[i])
-            {
-                hasPurchasedClickerUpgrade[i] = true;
-                clickerUpgrades[i].transform.parent = upgradePositions[FindOpenPosition()].transform;
-                clickerUpgrades[i].transform.position = clickerUpgrades[i].transform.parent.position;
-            }
+            clickerOffset++;
         }
+        else
+        {
+            for (int i = 0; i < clickerUpgrades.Count; i++)
+            {
+
+                if (enabledClickers >= (i == 0 ? 1 : i * 5) && !hasPurchasedClickerUpgrade[i])
+                {
+                    hasPurchasedClickerUpgrade[i] = true;
+                    clickerUpgrades[i].transform.parent = upgradePositions[FindOpenPosition()].transform;
+                    clickerUpgrades[i].transform.position = clickerUpgrades[i].transform.parent.position;
+                }
+            }
+        }             
     }
 
     public void VisiblePlantationUpgrades()
     {
-        for (int i = 0; i < plantationUpgrades.Count; i++)
+        if (FindOpenPosition() == 5)
         {
-            if (StaticValues.totalPlantations >= (i == 0 ? 1 : i * 5) && !hasPurchasedPlantationUpgrade[i])
-            {
-                hasPurchasedPlantationUpgrade[i] = true;
-                plantationUpgrades[i].transform.parent = upgradePositions[FindOpenPosition()].transform;
-                plantationUpgrades[i].transform.position = plantationUpgrades[i].transform.parent.position;
-            }
+            plantationOffset++;
         }
+        else
+        {
+            for (int i = 0; i < plantationUpgrades.Count; i++)
+            {
+
+                if (StaticValues.totalPlantations >= (i == 0 ? 1 : i * 5) && !hasPurchasedPlantationUpgrade[i])
+                {
+                    hasPurchasedPlantationUpgrade[i] = true;
+                    plantationUpgrades[i].transform.parent = upgradePositions[FindOpenPosition()].transform;
+                    plantationUpgrades[i].transform.position = plantationUpgrades[i].transform.parent.position;
+                }
+            }
+        }       
+    }
+
+    public void VisibleFactoryUpgrades()
+    {
+        if (FindOpenPosition() == 5)
+        {
+            factoryOffset++;
+        }
+        else
+        {
+            for (int i = 0; i < factoryUpgrades.Count; i++)
+            {
+                if ((StaticValues.totalFactories - factoryOffset) >= (i == 0 ? 1 : i * 5) && !hasPurchasedFactoryUpgrade[i])
+                {
+                    hasPurchasedFactoryUpgrade[i] = true;
+                    factoryUpgrades[i].transform.parent = upgradePositions[FindOpenPosition()].transform;
+                    factoryUpgrades[i].transform.position = factoryUpgrades[i].transform.parent.position;
+                }
+            }
+        }       
     }
 
     public int FindOpenPosition()
@@ -57,12 +97,6 @@ public class UpgradeManagement : MonoBehaviour
             }
         }
 
-        return 4;
-    }
-
-    private void Update()
-    {
-        VisibleClickerUpgrades();
-        VisiblePlantationUpgrades();
+        return 5;
     }
 }
