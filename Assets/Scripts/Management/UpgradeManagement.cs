@@ -21,7 +21,7 @@ public class UpgradeManagement : MonoBehaviour
     #endregion
 
     public List<Transform> upgradePositions = new List<Transform>();
-    public int clickerOffset = 0, plantationOffset = 0, factoryOffset = 0;
+    public int clickerOffset, plantationOffset, factoryOffset;
 
     public void VisibleClickerUpgrades()
     {
@@ -34,7 +34,6 @@ public class UpgradeManagement : MonoBehaviour
         {
             for (int i = 0; i < clickerUpgrades.Count; i++)
             {
-
                 if (enabledClickers >= (i == 0 ? 1 : i * 5) && !hasPurchasedClickerUpgrade[i])
                 {
                     hasPurchasedClickerUpgrade[i] = true;
