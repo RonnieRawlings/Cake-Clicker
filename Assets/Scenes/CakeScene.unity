@@ -1504,7 +1504,7 @@ MonoBehaviour:
   infoBackground: {fileID: 1997064988}
   info: Adds one Clicker to the Cake.
   title: Clicker
-  price: 5
+  price: 1
   cps: 'Each clicker creates: '
 --- !u!1 &253281651
 GameObject:
@@ -4228,7 +4228,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4368,7 +4368,7 @@ MonoBehaviour:
   infoBackground: {fileID: 1997064988}
   info: Adds a factory that mass produces cakes.
   title: Factory
-  price: 10000
+  price: 100
   cps: 'Each factory produces: '
 --- !u!114 &901902223
 MonoBehaviour:
@@ -5288,7 +5288,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8132,7 +8132,7 @@ MonoBehaviour:
   infoBackground: {fileID: 1997064988}
   info: Adds a plantation that farms cakes.
   title: Plantation
-  price: 500
+  price: 10
   cps: 'Each plantation produces: '
 --- !u!114 &1579892277
 MonoBehaviour:
@@ -10124,7 +10124,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
