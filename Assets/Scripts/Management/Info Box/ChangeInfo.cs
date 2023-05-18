@@ -17,7 +17,7 @@ public class ChangeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         titleText.text = title;
         infoText.text = info;     
-        priceText.text = int.Parse(price).ToString("N0");
+        priceText.text = "<sprite=0> " + int.Parse(price).ToString("N0");
         cpsText.text = FindCPSValue();
         infoBackground.enabled = true;
     }
