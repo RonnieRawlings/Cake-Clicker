@@ -5941,7 +5941,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.5801, y: -287.28}
+  m_AnchoredPosition: {x: 28.58, y: -446.62}
   m_SizeDelta: {x: 572.7896, y: 159.3365}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1071272417
@@ -5957,14 +5957,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
+  m_Color: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 699d24cf896b05747a738bb70bbc0fd6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd8207fcff1e49343aa747a61a7c68ef, type: 3}
   m_Type: 2
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5973,7 +5973,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.018
+  m_PixelsPerUnitMultiplier: 0.07
 --- !u!222 &1071272418
 CanvasRenderer:
   m_ObjectHideFlags: 0
