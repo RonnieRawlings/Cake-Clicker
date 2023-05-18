@@ -137,6 +137,39 @@ public class AddBuildings : MonoBehaviour
         }
     }
 
+    public void AddBank()
+    {
+        TextMeshProUGUI amountOwnedText = transform.GetChild(3).GetChild(3).GetComponent<TextMeshProUGUI>();
+        int upgradePrice = int.Parse(StaticValues.buildingPrices[3].text.Replace(",", ""));
+
+        if (StaticValues.currentCakes >= upgradePrice)
+        {
+            if (amountOwnedText.text == "")
+            {
+                amountOwnedText.text = "1";
+
+                StaticValues.banks[0].transform.parent.parent.gameObject.SetActive(true);
+                StaticValues.banks[0].GetComponent<Image>().enabled = true;
+            }
+            else
+            {
+                int currentOwned = int.Parse(amountOwnedText.text);
+
+                if (StaticValues.banks.Count > currentOwned)
+                {
+                    StaticValues.banks[currentOwned].GetComponent<Image>().enabled = true;
+                }
+
+                amountOwnedText.text = (currentOwned + 1).ToString();
+            }
+
+            StaticValues.cakesPerSecond += StaticValues.bankCPS;
+            StaticValues.totalBanks++;
+            StaticValues.currentCakes -= upgradePrice;
+            IncreaseUpgradePrice(StaticValues.buildingPrices[3], upgradePrice);
+        }
+    }
+
     public void IncreaseUpgradePrice(TextMeshProUGUI textToChange, int currentPrice)
     {
         currentPrice = (int)(currentPrice * 1.4f);

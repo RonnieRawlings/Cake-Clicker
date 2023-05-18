@@ -37,6 +37,13 @@ public static class StaticValues
 
     #endregion
 
+    #region Bank Values
+
+    public static List<GameObject> banks = new List<GameObject>();
+    public static float bankCPS = 120.0f, totalBanks = 0;
+
+    #endregion
+
     public static int CountEnabledClickers()
     {
         int count = 0;
