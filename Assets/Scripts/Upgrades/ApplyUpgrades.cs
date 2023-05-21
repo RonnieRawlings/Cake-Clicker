@@ -74,6 +74,26 @@ public class ApplyUpgrades : MonoBehaviour
         }
     }
 
+    public void BankUpgrade(int upgradeNum)
+    {
+        GameObject upgrade = upgradePositions[FindUpgrade("Upgrade Bank " + upgradeNum.ToString())].GetChild(0).gameObject;
+        int upgradePrice = upgrade.GetComponent<UpgradeValues>().upgradePrice;
+
+        if (StaticValues.currentCakes >= upgradePrice)
+        {
+            StaticValues.currentCakes -= upgradePrice;
+            StaticValues.cakesPerSecond -= (StaticValues.totalBanks * StaticValues.bankCPS);
+            StaticValues.bankCPS = StaticValues.bankCPS * 2;
+            StaticValues.cakesPerSecond += (StaticValues.totalBanks * StaticValues.bankCPS);
+
+            upgrade.transform.SetParent(transform.GetChild(0));
+            upgrade.transform.SetSiblingIndex(upgradeNum - 1);
+            upgrade.SetActive(false);
+
+            RepositionUpgrades();
+        }
+    }
+
     public int FindUpgrade(string upgradeName)
     {
         for (int index = 0; index < upgradePositions.Count; index++)

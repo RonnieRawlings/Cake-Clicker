@@ -18,10 +18,13 @@ public class UpgradeManagement : MonoBehaviour
     public List<GameObject> factoryUpgrades = new List<GameObject>();
     public List<bool> hasPurchasedFactoryUpgrade = new List<bool>();
 
+    public List<GameObject> bankUpgrades = new List<GameObject>();
+    public List<bool> hasPurchasedBankUpgrade = new List<bool>();
+
     #endregion
 
     public List<Transform> upgradePositions = new List<Transform>();
-    public int clickerOffset, plantationOffset, factoryOffset;
+    private int clickerOffset, plantationOffset, factoryOffset, bankOffset;
 
     public void VisibleClickerUpgrades()
     {
@@ -83,6 +86,26 @@ public class UpgradeManagement : MonoBehaviour
                 }
             }
         }       
+    }
+
+    public void VisibleBankUpgrades()
+    {
+        if (FindOpenPosition() == 5)
+        {
+            bankOffset++;
+        }
+        else
+        {
+            for (int i = 0; i < bankUpgrades.Count; i++)
+            {
+                if ((StaticValues.totalBanks - bankOffset) >= (i == 0 ? 1 : i * 5) && !hasPurchasedBankUpgrade[i])
+                {
+                    hasPurchasedBankUpgrade[i] = true;
+                    bankUpgrades[i].transform.parent = upgradePositions[FindOpenPosition()].transform;
+                    bankUpgrades[i].transform.position = bankUpgrades[i].transform.parent.position;
+                }
+            }
+        }
     }
 
     public int FindOpenPosition()
