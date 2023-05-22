@@ -14,6 +14,7 @@ public class SystemUnlock : MonoBehaviour
         if (StaticValues.currentCakes >= unlockAmount)
         {
             transform.Find("StoreTitle").GetComponent<TextMeshProUGUI>().text = "Pet Store";
+            transform.Find("PurchaseSlots").gameObject.SetActive(true);
             Destroy(this);
         }
     }
