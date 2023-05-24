@@ -3385,7 +3385,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.3764706, g: 0.3764706, b: 0.3764706, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3404,6 +3404,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 483074883}
+        m_TargetAssemblyTypeName: PetEggCrack, Assembly-CSharp
+        m_MethodName: StartCrackEgg
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1811212451}
         m_TargetAssemblyTypeName: Management, Assembly-CSharp
         m_MethodName: ResetSelectedButton
@@ -3425,11 +3437,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 483074878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b7ac3c78da29d043859a876df55111a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6cfe475a3fb7b5d469c0dd842cdb262e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAmount: 10
-  rotationSpeed: 70
+  petEggSprites:
+  - {fileID: 21300000, guid: ffaa9cc64e449da449f1aa07399e0ec1, type: 3}
+  - {fileID: 21300000, guid: 44e390df12d7c0e459115018427e2f3e, type: 3}
+  - {fileID: 21300000, guid: 691ec87cea9bb6940b3c085b89b632a7, type: 3}
+  rotationAmount: 15
+  rotationSpeed: 80
   rotationPause: 0
 --- !u!1 &490287019
 GameObject:
