@@ -179,6 +179,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ffaa9cc64e449da449f1aa07399e0ec1, type: 3}
   - {fileID: 21300000, guid: 44e390df12d7c0e459115018427e2f3e, type: 3}
   - {fileID: 21300000, guid: 691ec87cea9bb6940b3c085b89b632a7, type: 3}
+  - {fileID: 21300000, guid: 85183a8660c17bd459681c2e9964ded8, type: 3}
   rotationAmount: 15
   rotationSpeed: 80
   rotationPause: 0
@@ -7109,6 +7110,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ffaa9cc64e449da449f1aa07399e0ec1, type: 3}
   - {fileID: 21300000, guid: 44e390df12d7c0e459115018427e2f3e, type: 3}
   - {fileID: 21300000, guid: 691ec87cea9bb6940b3c085b89b632a7, type: 3}
+  - {fileID: 21300000, guid: 85183a8660c17bd459681c2e9964ded8, type: 3}
   rotationAmount: 15
   rotationSpeed: 80
   rotationPause: 0
@@ -8159,6 +8161,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ffaa9cc64e449da449f1aa07399e0ec1, type: 3}
   - {fileID: 21300000, guid: 44e390df12d7c0e459115018427e2f3e, type: 3}
   - {fileID: 21300000, guid: 691ec87cea9bb6940b3c085b89b632a7, type: 3}
+  - {fileID: 21300000, guid: 85183a8660c17bd459681c2e9964ded8, type: 3}
   rotationAmount: 15
   rotationSpeed: 80
   rotationPause: 0
@@ -8607,7 +8610,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1238435391
 RectTransform:
   m_ObjectHideFlags: 0
