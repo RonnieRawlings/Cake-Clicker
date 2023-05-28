@@ -12,7 +12,6 @@ public class ChangeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public Image infoBackground;
     public string info, title, price, cps;
     
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         titleText.text = title;
