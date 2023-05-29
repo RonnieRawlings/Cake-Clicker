@@ -22,10 +22,10 @@ public class PetEggCrack : MonoBehaviour
 
     public void StartCrackEgg()
     {
-        if (currentSprite != petEggSprites.Count)
+        if (currentSprite <= petEggSprites.Count)
         {
             StartCoroutine(CrackEgg());
-        }       
+        }
     }
 
     private IEnumerator CrackEgg()
@@ -69,7 +69,16 @@ public class PetEggCrack : MonoBehaviour
 
     public IEnumerator ChangeImage(float duration)
     {
-        imageToRotate.sprite = petEggSprites[currentSprite++];
+        if (currentSprite != petEggSprites.Count)
+        {
+            imageToRotate.sprite = petEggSprites[currentSprite++];       
+        }
+        else
+        {
+            StaticPetMethods.DecideOnPet(transform.parent.parent.parent.GetChild(0), imageToRotate);
+            currentSprite++;
+        }
+
         for (float t = 0; t < duration; t += Time.deltaTime)
         {
             imageToRotate.transform.localRotation = Quaternion.Slerp(imageToRotate.transform.localRotation, originalRotation, t / duration);
