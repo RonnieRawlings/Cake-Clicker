@@ -75,7 +75,7 @@ public class PetEggCrack : MonoBehaviour
         }
         else
         {
-            StaticPetMethods.DecideOnPet(transform.parent.parent.parent.GetChild(0), imageToRotate);
+            StaticPetMethods.DecideOnPet(transform.parent.parent.parent.GetChild(0), imageToRotate, transform.GetComponent<PetInfoChange>());
             currentSprite++;
         }
 

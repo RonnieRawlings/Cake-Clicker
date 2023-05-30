@@ -7,9 +7,19 @@ using UnityEngine.UI;
 
 public static class StaticPetMethods
 {
-    public static void DecideOnPet(Transform petLocations, Image hatchedEgg)
+    public static void DecideOnPet(Transform petLocations, Image hatchedEgg, PetInfoChange infoToChange)
     {
         Transform petRarity = petLocations.GetChild(Random.Range(0, petLocations.childCount));
-        hatchedEgg.sprite = petRarity.GetChild(Random.Range(0, petRarity.childCount)).GetComponent<Image>().sprite;
+        int randomPet = Random.Range(0, petRarity.childCount);
+        hatchedEgg.sprite = petRarity.GetChild(randomPet).GetComponent<Image>().sprite;
+
+        SetNewInfo(infoToChange, petRarity.GetChild(randomPet));
+    }
+
+    public static void SetNewInfo(PetInfoChange infoChange, Transform orignalImage)
+    {
+        infoChange.Title = orignalImage.name;
+        infoChange.Info = StaticPetInfo.petInfo[orignalImage.name];
+        infoChange.ForceTextChange();
     }
 }

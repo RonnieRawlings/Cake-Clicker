@@ -9,7 +9,17 @@ public class PetInfoChange : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 {
     [SerializeField] private TextMeshProUGUI titleBox, infoBox;
     [SerializeField] private Image infoBackground;
-    [SerializeField] private string title, info;
+    [SerializeField] protected string title, info;
+
+    public string Title
+    {
+        set { title = value; }
+    }
+
+    public string Info
+    {
+        set { info = value; }
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -23,6 +33,13 @@ public class PetInfoChange : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         titleBox.text = "";
         infoBox.text = "";
         infoBackground.enabled = false;
+    }
+
+    public void ForceTextChange()
+    {
+        titleBox.text = title;
+        infoBox.text = info;
+        infoBackground.enabled = true;
     }
 
     private void OnDisable()
