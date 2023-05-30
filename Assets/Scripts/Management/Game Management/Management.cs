@@ -1,6 +1,7 @@
 // Author - Ronnie Rawlings.
 
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -79,6 +80,15 @@ public class Management : MonoBehaviour
         Destroy(obj);
     }
 
+    public float AddPetMultiplyers()
+    {
+        float multipleBy = int.Parse(StaticPetInfo.petInfo["Rabbit"][1]) * StaticPetInfo.petsOwned["Rabbit"];
+        Debug.Log(multipleBy);
+        float amountToAdd = (multipleBy / 100) * StaticValues.cakesPerSecond;
+        Debug.Log(amountToAdd);
+        return StaticValues.cakesPerSecond + amountToAdd;
+    }
+
     private void Start()
     {
         StartCoroutine(AddCPS());
@@ -94,7 +104,7 @@ public class Management : MonoBehaviour
         int currentCakes = (int)StaticValues.currentCakes;
 
         cakeAmountText.text = "Cakes: " + currentCakes.ToString("N0");
-        cakesPerSecond.text = "per second: " + StaticValues.cakesPerSecond.ToString();
+        cakesPerSecond.text = "per second: " + AddPetMultiplyers().ToString();
 
         if (Screen.fullScreen)
         {

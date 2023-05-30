@@ -19,7 +19,10 @@ public static class StaticPetMethods
     public static void SetNewInfo(PetInfoChange infoChange, Transform orignalImage)
     {
         infoChange.Title = orignalImage.name;
-        infoChange.Info = StaticPetInfo.petInfo[orignalImage.name];
+        infoChange.Info = StaticPetInfo.petInfo[orignalImage.name][0];
         infoChange.ForceTextChange();
+
+        StaticPetInfo.petsOwned[orignalImage.name]++;
+        Debug.Log(StaticPetInfo.petsOwned[orignalImage.name]);
     }
 }
