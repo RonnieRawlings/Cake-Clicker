@@ -80,12 +80,14 @@ public class Management : MonoBehaviour
         Destroy(obj);
     }
 
-    public float AddPetMultiplyers()
+    public float AddPetMultipliers()
     {
-        float multipleBy = int.Parse(StaticPetInfo.petInfo["Rabbit"][1]) * StaticPetInfo.petsOwned["Rabbit"];
-        Debug.Log(multipleBy);
-        float amountToAdd = (multipleBy / 100) * StaticValues.cakesPerSecond;
-        Debug.Log(amountToAdd);
+        float amountToAdd = 0;
+        foreach (KeyValuePair<string, int> pet in StaticPetInfo.petsOwned)
+        {
+            float multipleBy = int.Parse(StaticPetInfo.petInfo[pet.Key][1]) * pet.Value;
+            amountToAdd += (multipleBy / 100) * StaticValues.cakesPerSecond;
+        }
         return StaticValues.cakesPerSecond + amountToAdd;
     }
 
@@ -104,7 +106,7 @@ public class Management : MonoBehaviour
         int currentCakes = (int)StaticValues.currentCakes;
 
         cakeAmountText.text = "Cakes: " + currentCakes.ToString("N0");
-        cakesPerSecond.text = "per second: " + AddPetMultiplyers().ToString();
+        cakesPerSecond.text = "per second: " + AddPetMultipliers().ToString();
 
         if (Screen.fullScreen)
         {
