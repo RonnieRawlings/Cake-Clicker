@@ -11,7 +11,7 @@ public static class StaticPetInfo
 
     static StaticPetInfo()
     {
-        petInfo.Add("Rabbit", new List<string> { "A friendly creature that provides 2% more cakes per second!", "2" });
+        petInfo.Add("Rabbit", new List<string> { "A friendly creature that provides +2% more cakes per second!", "2" });
         petsOwned.Add("Rabbit", 0);
     }
 }
