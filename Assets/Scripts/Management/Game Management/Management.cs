@@ -27,7 +27,7 @@ public class Management : MonoBehaviour
 
     public void FillClickers()
     {
-        GameObject parent = GameObject.Find("CakeCanvas").transform.GetChild(1).GetChild(2).gameObject;
+        GameObject parent = GameObject.Find("CakeCanvas").transform.GetChild(1).GetChild(0).gameObject;
 
         foreach (Transform child in parent.transform)
         {
