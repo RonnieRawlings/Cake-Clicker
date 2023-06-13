@@ -58,7 +58,14 @@ public static class StaticValues
             currentCakes = loadedSave.currentCakes;
 
             buildingPrices = new List<TextMeshProUGUI>();
-            SetObjectLists(buildingPrices, loadedSave.buildingPrices);                       
+            SetObjectLists(buildingPrices, loadedSave.buildingPrices);
+
+            totalPlantations = loadedSave.totalPlantations;
+            totalBanks = loadedSave.totalBanks;
+            totalFactories = loadedSave.totalFactories;
+
+            clickers = new List<GameObject>();
+            SetGameObjectLists(clickers, loadedSave.clickers);
         }
         else
         {
@@ -80,6 +87,28 @@ public static class StaticValues
                     textObject.text = textData.text;
                     listToFill.Add(textObject);
                 }
+            }
+        }
+    }
+
+    public static void SetGameObjectLists(List<GameObject> listToFill, List<GameObjectData> iterateList)
+    {
+        Transform canvasTransform = GameObject.Find("CakeCanvas").transform;
+        foreach (GameObjectData gameObjData in iterateList)
+        {
+            GameObject gameObjTransform = FindChildRecursive(canvasTransform, gameObjData.gameObjectName).gameObject;
+            if (gameObjTransform != null)
+            {
+                if (gameObjTransform.name.Contains("Clicker"))
+                {
+                    gameObjTransform.GetComponent<Image>().enabled = gameObjData.isActive;
+                }
+                else
+                {
+                    gameObjTransform.SetActive(gameObjData.isActive);
+                }          
+                
+                listToFill.Add(gameObjTransform.gameObject);
             }
         }
     }

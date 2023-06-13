@@ -33,6 +33,14 @@ public class BuildingManagement : MonoBehaviour
         }
     }
 
+    public void LoadBuildingVisuals()
+    {
+        Transform buildings = GameObject.Find("CakeCanvas").transform.GetChild(3).GetChild(2);
+        buildings.GetChild(1).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalPlantations.ToString();
+        buildings.GetChild(2).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalFactories.ToString();
+        buildings.GetChild(3).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalBanks.ToString();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +53,10 @@ public class BuildingManagement : MonoBehaviour
         {
             StaticValues.buildingPrices = buildingPrices;
             Debug.Log("THIS IS CALLED");
+        }
+        else
+        {
+            LoadBuildingVisuals();
         }
 
         if (StaticValues.loadedSave != null)

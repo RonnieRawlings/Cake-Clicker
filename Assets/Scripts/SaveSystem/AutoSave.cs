@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AutoSave : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class AutoSave : MonoBehaviour
     {
         GameSave gameSave = new GameSave();
 
+        // STATICVALUES SCRIPT SAVE
+
         gameSave.clickAmount = StaticValues.clickAmount;
         gameSave.cakesPerSecond = StaticValues.cakesPerSecond;
         gameSave.currentCakes = StaticValues.currentCakes;
@@ -31,6 +34,20 @@ public class AutoSave : MonoBehaviour
             textDataList.Add(textData);
         }
         gameSave.buildingPrices = textDataList;
+
+        List<GameObjectData> clickerData = new List<GameObjectData>();
+        foreach (GameObject gameObj in StaticValues.clickers)
+        {
+            GameObjectData gameObjData = new GameObjectData();
+            gameObjData.gameObjectName = gameObj.name;
+            gameObjData.isActive = gameObj.GetComponent<Image>().enabled;
+            clickerData.Add(gameObjData);
+        }
+        gameSave.clickers = clickerData;
+
+        gameSave.totalPlantations = StaticValues.totalPlantations;
+        gameSave.totalFactories = StaticValues.totalFactories;
+        gameSave.totalBanks = StaticValues.totalBanks;
 
         SaveSystem.SaveGame(gameSave);
         Debug.Log("Game Saved");

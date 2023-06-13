@@ -93,8 +93,12 @@ public class Management : MonoBehaviour
 
     private void Start()
     {
+        if (StaticValues.clickers.Count == 0)
+        {
+            FillClickers();
+        }
+
         StartCoroutine(AddCPS());
-        FillClickers();
         StartCoroutine(AnimateClickers());
         
         Screen.fullScreen = false;
