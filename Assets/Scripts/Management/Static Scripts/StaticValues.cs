@@ -8,9 +8,11 @@ using UnityEngine.UI;
 
 public static class StaticValues
 {
+    private static GameSave loadedSave;
+
     #region Overview Values
 
-    public static float currentCakes = 0, clickAmount = 1;
+    public static float currentCakes = 0, clickAmount;
     public static float cakesPerSecond = 0.0f;
     public static List<TextMeshProUGUI> buildingPrices = new List<TextMeshProUGUI>();
 
@@ -43,6 +45,20 @@ public static class StaticValues
     public static float bankCPS = 120.0f, totalBanks = 0;
 
     #endregion
+
+    static StaticValues()
+    {
+        loadedSave = SaveSystem.LoadGame();
+
+        if (loadedSave == null)
+        {
+            clickAmount = 1;
+        }
+        else
+        {
+            clickAmount = loadedSave.clickAmount; 
+        }
+    }
 
     public static int CountEnabledClickers()
     {
