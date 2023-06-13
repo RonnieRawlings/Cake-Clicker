@@ -10,6 +10,8 @@ using UnityEngine.UI;
 public class BuildingManagement : MonoBehaviour
 {
     public List<TextMeshProUGUI> buildingPrices = new List<TextMeshProUGUI>();
+    public List<TextMeshProUGUI> example;
+    public List<string> exampleInts;
 
     public void EnableBuilding()
     {
@@ -38,11 +40,29 @@ public class BuildingManagement : MonoBehaviour
         StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(0).GetChild(1), StaticValues.plantations);
         StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(1).GetChild(1), StaticValues.factories);
         StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(2).GetChild(1), StaticValues.banks);
-        StaticValues.buildingPrices = buildingPrices;    
+
+        if (StaticValues.buildingPrices.Count == 0)
+        {
+            StaticValues.buildingPrices = buildingPrices;
+            Debug.Log("THIS IS CALLED");
+        }
+
+        if (StaticValues.loadedSave != null)
+        {
+            Debug.Log(StaticValues.loadedSave.buildingPrices.Count);
+        }
+        
     }
 
     void Update()
     {
         EnableBuilding();
+        example = StaticValues.buildingPrices;
+
+        exampleInts = new List<string>();
+        foreach (var item in example)
+        {            
+            exampleInts.Add(item.text);
+        }
     }
 }

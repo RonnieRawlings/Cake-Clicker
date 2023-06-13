@@ -2,13 +2,14 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public static class StaticValues
 {
-    private static GameSave loadedSave;
+    public static GameSave loadedSave;
 
     #region Overview Values
 
@@ -50,14 +51,57 @@ public static class StaticValues
     {
         loadedSave = SaveSystem.LoadGame();
 
-        if (loadedSave == null)
+        if (loadedSave != null)
         {
-            clickAmount = 1;
+            clickAmount = loadedSave.clickAmount;
+            cakesPerSecond = loadedSave.cakesPerSecond;
+            currentCakes = loadedSave.currentCakes;
+
+            buildingPrices = new List<TextMeshProUGUI>();
+            SetObjectLists(buildingPrices, loadedSave.buildingPrices);                       
         }
         else
         {
-            clickAmount = loadedSave.clickAmount; 
+            clickAmount = 1;
         }
+    }
+
+    public static void SetObjectLists(List<TextMeshProUGUI> listToFill, List<TextData> iterateList)
+    {
+        Transform canvasTransform = GameObject.Find("CakeCanvas").transform;
+        foreach (TextData textData in iterateList)
+        {
+            Transform textObjectTransform = FindChildRecursive(canvasTransform, textData.gameObjectName);
+            if (textObjectTransform != null)
+            {
+                TextMeshProUGUI textObject = textObjectTransform.GetComponent<TextMeshProUGUI>();
+                if (textObject != null)
+                {
+                    textObject.text = textData.text;
+                    listToFill.Add(textObject);
+                }
+            }
+        }
+    }
+
+    public static Transform FindChildRecursive(Transform parent, string name)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name == name)
+            {
+                return child;
+            }
+            else
+            {
+                Transform result = FindChildRecursive(child, name);
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+        }
+        return null;
     }
 
     public static int CountEnabledClickers()

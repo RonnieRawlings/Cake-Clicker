@@ -5,16 +5,26 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Collections.Generic;
+using TMPro;
+
+[DataContract]
+public class TextData
+{
+    [DataMember]
+    public string text;
+    [DataMember]
+    public string gameObjectName;
+}
 
 [DataContract]
 public class GameSave
 {
+    // STATICVALUES SCRIPT
     [DataMember]
-    public float currentCakes;
+    public float currentCakes, clickAmount, cakesPerSecond;
     [DataMember]
-    public float clickAmount;
-    [DataMember]
-    public float cakesPerSecond;
+    public List<TextData> buildingPrices = new List<TextData>();
 }
 
 public static class SaveSystem
