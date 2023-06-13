@@ -10,8 +10,6 @@ using UnityEngine.UI;
 public class BuildingManagement : MonoBehaviour
 {
     public List<TextMeshProUGUI> buildingPrices = new List<TextMeshProUGUI>();
-    public List<TextMeshProUGUI> example;
-    public List<string> exampleInts;
 
     public void EnableBuilding()
     {
@@ -36,9 +34,23 @@ public class BuildingManagement : MonoBehaviour
     public void LoadBuildingVisuals()
     {
         Transform buildings = GameObject.Find("CakeCanvas").transform.GetChild(3).GetChild(2);
-        buildings.GetChild(1).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalPlantations.ToString();
-        buildings.GetChild(2).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalFactories.ToString();
-        buildings.GetChild(3).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalBanks.ToString();
+        if (StaticValues.totalPlantations != 0)
+            buildings.GetChild(1).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalPlantations.ToString();
+        if (StaticValues.totalFactories != 0)
+            buildings.GetChild(2).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalFactories.ToString();
+        if (StaticValues.totalBanks != 0)
+            buildings.GetChild(3).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalBanks.ToString();
+
+        int amount = 0;
+        foreach (var obj in StaticValues.clickers)
+        {
+            if (obj.GetComponent<Image>().enabled)
+            {
+                amount++;
+            }
+        }
+        if (amount !=0)
+            buildings.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>().text = amount.ToString();
     }
 
     // Start is called before the first frame update
@@ -69,12 +81,5 @@ public class BuildingManagement : MonoBehaviour
     void Update()
     {
         EnableBuilding();
-        example = StaticValues.buildingPrices;
-
-        exampleInts = new List<string>();
-        foreach (var item in example)
-        {            
-            exampleInts.Add(item.text);
-        }
     }
 }
