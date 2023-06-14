@@ -13,13 +13,16 @@ public class BuildingManagement : MonoBehaviour
 
     public void EnableBuilding()
     {
+        
+
         foreach (TextMeshProUGUI building in StaticValues.buildingPrices)
         {
+            int.TryParse(building.transform.parent.GetChild(3).GetComponent<TextMeshProUGUI>().text, out int tryParse);
             if (building.text == "-")
             {
 
             }
-            else if (StaticValues.currentCakes >= int.Parse(building.text.Replace(",", "")))
+            else if (StaticValues.currentCakes >= int.Parse(building.text.Replace(",", "")) || tryParse > 0)
             {
                 if (building.GetComponentInParent<Button>().interactable == false)
                 {
