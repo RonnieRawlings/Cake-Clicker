@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class UpgradeManagement : MonoBehaviour
 {
+    private GameSave loadedSave;
+
     #region Upgrades
 
     public List<GameObject> clickerUpgrades = new List<GameObject>();
@@ -25,6 +27,19 @@ public class UpgradeManagement : MonoBehaviour
 
     public List<Transform> upgradePositions = new List<Transform>();
     private int clickerOffset, plantationOffset, factoryOffset, bankOffset;
+
+    private void Awake()
+    {
+        loadedSave = StaticValues.loadedSave;
+
+        if (loadedSave != null)
+        {
+            hasPurchasedClickerUpgrade = loadedSave.hasPurchasedClickerUpgrade;
+            hasPurchasedPlantationUpgrade = loadedSave.hasPurchasedPlantationUpgrade;
+            hasPurchasedFactoryUpgrade = loadedSave.hasPurchasedFactoryUpgrade;
+            hasPurchasedBankUpgrade = loadedSave.hasPurchasedBankUpgrade;
+        }
+    }
 
     public void VisibleClickerUpgrades()
     {

@@ -20,9 +20,20 @@ public class AutoSave : MonoBehaviour
         GameSave gameSave = new GameSave();
 
         StaticValuesSave(gameSave); // Saves values from StaticValues Script.
+        UpgradeManagementSave(gameSave); // Saves values from UpgradeManagement Script.
 
         SaveSystem.SaveGame(gameSave);
         Debug.Log("Game Saved");
+    }
+
+    public void UpgradeManagementSave(GameSave gameSave)
+    {
+        UpgradeManagement upgradeManagement = transform.GetComponent<UpgradeManagement>();
+
+        gameSave.hasPurchasedClickerUpgrade = upgradeManagement.hasPurchasedClickerUpgrade;
+        gameSave.hasPurchasedPlantationUpgrade = upgradeManagement.hasPurchasedPlantationUpgrade;
+        gameSave.hasPurchasedFactoryUpgrade = upgradeManagement.hasPurchasedFactoryUpgrade;
+        gameSave.hasPurchasedBankUpgrade = upgradeManagement.hasPurchasedBankUpgrade;
     }
 
     public void StaticValuesSave(GameSave gameSave)

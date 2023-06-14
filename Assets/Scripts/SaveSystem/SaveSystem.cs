@@ -47,6 +47,16 @@ public class GameSave
     public List<GameObjectData> banks = new List<GameObjectData>();
     [DataMember]
     public float plantationCPS, factoryCPS, bankCPS;
+
+    // UPGRADE MANAGEMENT SCRIPT
+    [DataMember]
+    public List<bool> hasPurchasedClickerUpgrade = new List<bool>();
+    [DataMember]
+    public List<bool> hasPurchasedPlantationUpgrade = new List<bool>();
+    [DataMember]
+    public List<bool> hasPurchasedFactoryUpgrade = new List<bool>();
+    [DataMember]
+    public List<bool> hasPurchasedBankUpgrade = new List<bool>();
 }
 
 public static class SaveSystem
