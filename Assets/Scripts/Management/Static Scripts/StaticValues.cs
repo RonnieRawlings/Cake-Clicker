@@ -64,8 +64,23 @@ public static class StaticValues
             totalBanks = loadedSave.totalBanks;
             totalFactories = loadedSave.totalFactories;
 
+            clickerCPS = loadedSave.clickerCPS;
+            totalClickerCPS = loadedSave.totalClickerCPS;
             clickers = new List<GameObject>();
             SetGameObjectLists(clickers, loadedSave.clickers);
+
+            plantationCPS = loadedSave.plantationCPS;
+            factoryCPS = loadedSave.factoryCPS;
+            bankCPS = loadedSave.bankCPS;
+
+            plantations = new List<GameObject>();
+            SetGameObjectLists(plantations, loadedSave.plantations);
+
+            factories = new List<GameObject>();
+            SetGameObjectLists(factories, loadedSave.factories);
+
+            banks = new List<GameObject>();
+            SetGameObjectLists(banks, loadedSave.banks);
         }
         else
         {
@@ -99,15 +114,7 @@ public static class StaticValues
             GameObject gameObjTransform = FindChildRecursive(canvasTransform, gameObjData.gameObjectName).gameObject;
             if (gameObjTransform != null)
             {
-                if (gameObjTransform.name.Contains("Clicker"))
-                {
-                    gameObjTransform.GetComponent<Image>().enabled = gameObjData.isActive;
-                }
-                else
-                {
-                    gameObjTransform.SetActive(gameObjData.isActive);
-                }          
-                
+                gameObjTransform.GetComponent<Image>().enabled = gameObjData.isActive;               
                 listToFill.Add(gameObjTransform.gameObject);
             }
         }

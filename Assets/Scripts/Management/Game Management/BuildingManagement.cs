@@ -12,9 +12,7 @@ public class BuildingManagement : MonoBehaviour
     public List<TextMeshProUGUI> buildingPrices = new List<TextMeshProUGUI>();
 
     public void EnableBuilding()
-    {
-        
-
+    {       
         foreach (TextMeshProUGUI building in StaticValues.buildingPrices)
         {
             int.TryParse(building.transform.parent.GetChild(3).GetComponent<TextMeshProUGUI>().text, out int tryParse);
@@ -59,11 +57,15 @@ public class BuildingManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Transform buildingsVisualised = GameObject.Find("CakeCanvas").transform.Find("BuildingsVisualised");
-        StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(0).GetChild(1), StaticValues.plantations);
-        StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(1).GetChild(1), StaticValues.factories);
-        StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(2).GetChild(1), StaticValues.banks);
 
+        if (StaticValues.plantations.Count == 0)
+        {
+            Transform buildingsVisualised = GameObject.Find("CakeCanvas").transform.Find("BuildingsVisualised");
+            StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(0).GetChild(1), StaticValues.plantations);
+            StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(1).GetChild(1), StaticValues.factories);
+            StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(2).GetChild(1), StaticValues.banks);
+        }
+        
         if (StaticValues.buildingPrices.Count == 0)
         {
             StaticValues.buildingPrices = buildingPrices;
@@ -77,8 +79,7 @@ public class BuildingManagement : MonoBehaviour
         if (StaticValues.loadedSave != null)
         {
             Debug.Log(StaticValues.loadedSave.buildingPrices.Count);
-        }
-        
+        }        
     }
 
     void Update()

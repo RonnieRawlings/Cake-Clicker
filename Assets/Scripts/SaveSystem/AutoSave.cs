@@ -19,8 +19,14 @@ public class AutoSave : MonoBehaviour
     {
         GameSave gameSave = new GameSave();
 
-        // STATICVALUES SCRIPT SAVE
+        StaticValuesSave(gameSave); // Saves values from StaticValues Script.
 
+        SaveSystem.SaveGame(gameSave);
+        Debug.Log("Game Saved");
+    }
+
+    public void StaticValuesSave(GameSave gameSave)
+    {
         gameSave.clickAmount = StaticValues.clickAmount;
         gameSave.cakesPerSecond = StaticValues.cakesPerSecond;
         gameSave.currentCakes = StaticValues.currentCakes;
@@ -35,6 +41,11 @@ public class AutoSave : MonoBehaviour
         }
         gameSave.buildingPrices = textDataList;
 
+        gameSave.clickerCPS = StaticValues.clickerCPS;
+        gameSave.plantationCPS = StaticValues.plantationCPS;
+        gameSave.factoryCPS = StaticValues.factoryCPS;
+        gameSave.bankCPS = StaticValues.bankCPS;
+     
         List<GameObjectData> clickerData = new List<GameObjectData>();
         foreach (GameObject gameObj in StaticValues.clickers)
         {
@@ -45,12 +56,40 @@ public class AutoSave : MonoBehaviour
         }
         gameSave.clickers = clickerData;
 
+        List<GameObjectData> plantationData = new List<GameObjectData>();
+        foreach (GameObject gameObj in StaticValues.plantations)
+        {
+            GameObjectData gameObjData = new GameObjectData();
+            gameObjData.gameObjectName = gameObj.name;
+            gameObjData.isActive = gameObj.GetComponent<Image>().enabled;
+            plantationData.Add(gameObjData);
+        }
+        gameSave.plantations = plantationData;
+
+        List<GameObjectData> factoryData = new List<GameObjectData>();
+        foreach (GameObject gameObj in StaticValues.factories)
+        {
+            GameObjectData gameObjData = new GameObjectData();
+            gameObjData.gameObjectName = gameObj.name;
+            gameObjData.isActive = gameObj.GetComponent<Image>().enabled;
+            factoryData.Add(gameObjData);
+        }
+        gameSave.factories = factoryData;
+
+        List<GameObjectData> bankData = new List<GameObjectData>();
+        foreach (GameObject gameObj in StaticValues.banks)
+        {
+            GameObjectData gameObjData = new GameObjectData();
+            gameObjData.gameObjectName = gameObj.name;
+            gameObjData.isActive = gameObj.GetComponent<Image>().enabled;
+            bankData.Add(gameObjData);
+        }
+        gameSave.banks = bankData;
+
         gameSave.totalPlantations = StaticValues.totalPlantations;
         gameSave.totalFactories = StaticValues.totalFactories;
         gameSave.totalBanks = StaticValues.totalBanks;
-
-        SaveSystem.SaveGame(gameSave);
-        Debug.Log("Game Saved");
+        gameSave.totalClickerCPS = StaticValues.totalClickerCPS;
     }
 }
 

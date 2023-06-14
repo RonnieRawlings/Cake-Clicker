@@ -36,7 +36,17 @@ public class GameSave
     [DataMember]
     public float totalPlantations, totalFactories, totalBanks;
     [DataMember]
-    public List<GameObjectData> clickers = new List<GameObjectData>(); 
+    public List<GameObjectData> clickers = new List<GameObjectData>();
+    [DataMember]
+    public float clickerCPS, totalClickerCPS;
+    [DataMember]
+    public List<GameObjectData> plantations = new List<GameObjectData>();
+    [DataMember]
+    public List<GameObjectData> factories = new List<GameObjectData>();
+    [DataMember]
+    public List<GameObjectData> banks = new List<GameObjectData>();
+    [DataMember]
+    public float plantationCPS, factoryCPS, bankCPS;
 }
 
 public static class SaveSystem
