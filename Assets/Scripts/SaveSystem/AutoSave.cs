@@ -21,6 +21,7 @@ public class AutoSave : MonoBehaviour
 
         StaticValuesSave(gameSave); // Saves values from StaticValues Script.
         UpgradeManagementSave(gameSave); // Saves values from UpgradeManagement Script.
+        UpgradeValuesSave(gameSave); // Saves the values from all UpgradeValues Scripts.
 
         SaveSystem.SaveGame(gameSave);
         Debug.Log("Game Saved");
@@ -34,6 +35,24 @@ public class AutoSave : MonoBehaviour
         gameSave.hasPurchasedPlantationUpgrade = upgradeManagement.hasPurchasedPlantationUpgrade;
         gameSave.hasPurchasedFactoryUpgrade = upgradeManagement.hasPurchasedFactoryUpgrade;
         gameSave.hasPurchasedBankUpgrade = upgradeManagement.hasPurchasedBankUpgrade;
+    }
+    
+    public void UpgradeValuesSave(GameSave gameSave)
+    {
+        List<GameObjectData> upgradeValues = new List<GameObjectData>();
+        List<UpgradeValues> allUpgradeValuesList = new List<UpgradeValues>(Resources.FindObjectsOfTypeAll<UpgradeValues>());
+
+        foreach (UpgradeValues upgrade in allUpgradeValuesList)
+        {
+            GameObjectData objData = new GameObjectData();
+            objData.gameObjectName = upgrade.name;
+            objData.parentObj = upgrade.transform.parent.name;
+            objData.x = upgrade.transform.position.x;
+            objData.y = upgrade.transform.position.y;
+            objData.z = upgrade.transform.position.z;
+            upgradeValues.Add(objData);
+        }
+        gameSave.upgradePositions = upgradeValues;
     }
 
     public void StaticValuesSave(GameSave gameSave)

@@ -14,6 +14,10 @@ public class GameObjectData
     public string gameObjectName;
     [DataMember]
     public bool isActive;
+    [DataMember]
+    public string parentObj;
+    [DataMember]
+    public float x, y, z;
 }
 
 [DataContract]
@@ -57,6 +61,10 @@ public class GameSave
     public List<bool> hasPurchasedFactoryUpgrade = new List<bool>();
     [DataMember]
     public List<bool> hasPurchasedBankUpgrade = new List<bool>();
+
+    // UPGRADE VALUES SCRIPT
+    [DataMember]
+    public List<GameObjectData> upgradePositions = new List<GameObjectData>();
 }
 
 public static class SaveSystem
