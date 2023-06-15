@@ -12,6 +12,7 @@ public static class StaticPetMethods
         Transform petRarity = petLocations.GetChild(Random.Range(0, petLocations.childCount));
         int randomPet = Random.Range(0, petRarity.childCount);
         hatchedEgg.sprite = petRarity.GetChild(randomPet).GetComponent<Image>().sprite;
+        hatchedEgg.name = petRarity.GetChild(randomPet).GetComponent<Image>().sprite.name;
 
         SetNewInfo(infoToChange, petRarity.GetChild(randomPet));
     }
@@ -24,5 +25,14 @@ public static class StaticPetMethods
 
         StaticPetInfo.petsOwned[orignalImage.name]++;
         Debug.Log(StaticPetInfo.petsOwned[orignalImage.name]);
+    }
+
+    public static void LoadPets(Image hatchedEgg, PetInfoChange infoChange)
+    {
+        infoChange.Title = hatchedEgg.name;
+        infoChange.Info = StaticPetInfo.petInfo[hatchedEgg.name][0];
+        infoChange.ForceTextChange();
+
+        hatchedEgg.sprite = Resources.Load("Sprites/Pet System/Common Pets/" + hatchedEgg.name, typeof (Sprite)) as Sprite;
     }
 }

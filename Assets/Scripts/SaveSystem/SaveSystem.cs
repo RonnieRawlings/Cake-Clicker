@@ -65,6 +65,16 @@ public class GameSave
     // UPGRADE VALUES SCRIPT
     [DataMember]
     public List<GameObjectData> upgradePositions = new List<GameObjectData>();
+
+    // STATIC PET INFO SCRIPT
+    [DataMember]
+    public bool systemUnlocked;
+    [DataMember]
+    public Dictionary<string, List<string>> petInfo = new Dictionary<string, List<string>>();
+    [DataMember]
+    public Dictionary<string, int> petsOwned = new Dictionary<string, int>();
+    [DataMember]
+    public List<string> petEggs = new List<string>();
 }
 
 public static class SaveSystem

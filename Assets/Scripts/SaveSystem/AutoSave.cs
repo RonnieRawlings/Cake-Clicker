@@ -22,9 +22,25 @@ public class AutoSave : MonoBehaviour
         StaticValuesSave(gameSave); // Saves values from StaticValues Script.
         UpgradeManagementSave(gameSave); // Saves values from UpgradeManagement Script.
         UpgradeValuesSave(gameSave); // Saves the values from all UpgradeValues Scripts.
+        StaticPetInfoSave(gameSave); // Saves the values from the StaticPetInfo Script.
 
         SaveSystem.SaveGame(gameSave);
         Debug.Log("Game Saved");
+    }
+
+    public void StaticPetInfoSave(GameSave gameSave)
+    {
+        gameSave.systemUnlocked = StaticPetInfo.systemUnlocked;
+
+        gameSave.petInfo = StaticPetInfo.petInfo;
+        gameSave.petsOwned = StaticPetInfo.petsOwned;
+
+        List<string> petEggData = new List<string>();
+        foreach (GameObject gameObj in StaticPetInfo.petEggs)
+        {
+            petEggData.Add(gameObj.name);
+        }
+        gameSave.petEggs = petEggData;
     }
 
     public void UpgradeManagementSave(GameSave gameSave)

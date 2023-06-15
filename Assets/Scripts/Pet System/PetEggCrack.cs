@@ -1,7 +1,10 @@
 // Author - Ronnie Rawlings.
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +16,24 @@ public class PetEggCrack : MonoBehaviour
     private int currentSprite = 0;
     private Image imageToRotate;
     private Quaternion originalRotation;
+
+    private void Awake()
+    {
+        if (StaticValues.loadedSave != null)
+        {
+            transform.name = StaticValues.loadedSave.petEggs[transform.GetSiblingIndex() - 1];
+
+            if (!transform.name.Contains("Egg"))
+            {
+                StaticPetMethods.LoadPets(GetComponent<Image>(), transform.GetComponent<PetInfoChange>());
+                currentSprite = 4;
+            }
+        }
+
+        StaticPetInfo.petEggs[transform.GetSiblingIndex() - 1] = gameObject;
+        Debug.Log(StaticPetInfo.petEggs[transform.GetSiblingIndex() - 1].name);
+    }
+
 
     void Start()
     {

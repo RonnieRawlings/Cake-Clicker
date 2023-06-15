@@ -57,7 +57,6 @@ public class BuildingManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         if (StaticValues.plantations.Count == 0)
         {
             Transform buildingsVisualised = GameObject.Find("CakeCanvas").transform.Find("BuildingsVisualised");
@@ -74,12 +73,7 @@ public class BuildingManagement : MonoBehaviour
         else
         {
             LoadBuildingVisuals();
-        }
-
-        if (StaticValues.loadedSave != null)
-        {
-            Debug.Log(StaticValues.loadedSave.buildingPrices.Count);
-        }        
+        }       
     }
 
     void Update()
