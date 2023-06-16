@@ -31,7 +31,6 @@ public static class StaticPetMethods
     {
         infoChange.Title = hatchedEgg.name;
         infoChange.Info = StaticPetInfo.petInfo[hatchedEgg.name][0];
-        infoChange.ForceTextChange();
 
         hatchedEgg.sprite = Resources.Load("Sprites/Pet System/Common Pets/" + hatchedEgg.name, typeof (Sprite)) as Sprite;
     }

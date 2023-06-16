@@ -49,6 +49,7 @@ public static class StaticValues
 
     static StaticValues()
     {
+        //PlayerPrefs.DeleteKey("save_game");
         loadedSave = SaveSystem.LoadGame();
 
         if (loadedSave != null)
