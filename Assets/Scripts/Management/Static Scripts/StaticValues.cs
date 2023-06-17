@@ -22,7 +22,7 @@ public static class StaticValues
     #region Clicker Values
 
     public static List<GameObject> clickers = new List<GameObject>();
-    public static float clickerCPS = 0.5f, totalClickerCPS;
+    public static float clickerCPS = 0.5f, totalClickerCPS = 0;
 
     #endregion
 
@@ -49,8 +49,8 @@ public static class StaticValues
 
     static StaticValues()
     {
-        //PlayerPrefs.DeleteKey("save_game");
         loadedSave = SaveSystem.LoadGame();
+        Debug.Log("This is called cunt");
 
         if (loadedSave != null)
         {
@@ -88,6 +88,27 @@ public static class StaticValues
             clickAmount = 1;
         }
     }
+
+    public static void ResetValues()
+    {
+        currentCakes = 0;
+        clickAmount = 1;
+        cakesPerSecond = 0.0f;
+        buildingPrices.Clear();
+        clickers.Clear();
+        clickerCPS = 0.5f;
+        totalClickerCPS = 0;
+        plantations.Clear();
+        plantationCPS = 10.0f;
+        totalPlantations = 0;
+        factories.Clear();
+        factoryCPS = 50.0f;
+        totalFactories = 0;
+        banks.Clear();
+        bankCPS = 120.0f;
+        totalBanks = 0;
+    }
+
 
     public static void SetObjectLists(List<TextMeshProUGUI> listToFill, List<TextData> iterateList)
     {
