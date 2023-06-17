@@ -46,7 +46,7 @@ public class ApplyUpgrades : MonoBehaviour
             StaticValues.plantationCPS = StaticValues.plantationCPS * 2;
             StaticValues.cakesPerSecond += (StaticValues.totalPlantations * StaticValues.plantationCPS);
 
-            upgrade.transform.SetParent(transform.GetChild(0));
+            upgrade.transform.SetParent(transform.GetChild(1));
             upgrade.transform.SetSiblingIndex(upgradeNum - 1);
             upgrade.SetActive(false);
 
@@ -66,7 +66,7 @@ public class ApplyUpgrades : MonoBehaviour
             StaticValues.factoryCPS = StaticValues.factoryCPS * 2;
             StaticValues.cakesPerSecond += (StaticValues.totalFactories * StaticValues.factoryCPS);
 
-            upgrade.transform.SetParent(transform.GetChild(0));
+            upgrade.transform.SetParent(transform.GetChild(2));
             upgrade.transform.SetSiblingIndex(upgradeNum - 1);
             upgrade.SetActive(false);
 
@@ -86,7 +86,7 @@ public class ApplyUpgrades : MonoBehaviour
             StaticValues.bankCPS = StaticValues.bankCPS * 2;
             StaticValues.cakesPerSecond += (StaticValues.totalBanks * StaticValues.bankCPS);
 
-            upgrade.transform.SetParent(transform.GetChild(0));
+            upgrade.transform.SetParent(transform.GetChild(3));
             upgrade.transform.SetSiblingIndex(upgradeNum - 1);
             upgrade.SetActive(false);
 
