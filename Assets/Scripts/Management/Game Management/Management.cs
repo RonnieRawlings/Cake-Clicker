@@ -60,6 +60,8 @@ public class Management : MonoBehaviour
         text.resizeTextForBestFit = true;
         text.text = "+" + StaticValues.clickAmount.ToString();
         text.font = textFont;
+        text.resizeTextMinSize = 30;
+        text.resizeTextMaxSize = 50;
 
         StartCoroutine(FadeOut(textObject));
     }
@@ -69,10 +71,12 @@ public class Management : MonoBehaviour
         CanvasGroup canvasGroup = obj.AddComponent<CanvasGroup>();
         float duration = 3f;
         float timeElapsed = 0f;
+        float speed = 50f;
 
         while (timeElapsed < duration)
         {
             canvasGroup.alpha = 1 - (timeElapsed / duration);
+            obj.transform.position += new Vector3(0, speed * Time.deltaTime, 0);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
