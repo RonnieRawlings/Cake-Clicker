@@ -60,7 +60,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5aa94a38e205934387b23608196a588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingPrices: []
+  buildingPrices:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &6538912631012524320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +105,8 @@ MonoBehaviour:
   hasPurchasedFactoryUpgrade: 
   bankUpgrades: []
   hasPurchasedBankUpgrade: 
+  officeUpgrades: []
+  hasPurchasedOfficeUpgrade: 
   upgradePositions: []
 --- !u!114 &2345520548023653248
 MonoBehaviour:

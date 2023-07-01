@@ -2799,7 +2799,6 @@ GameObject:
   - component: {fileID: 288439644}
   - component: {fileID: 288439643}
   - component: {fileID: 288439642}
-  - component: {fileID: 288439647}
   m_Layer: 5
   m_Name: Upgrade Clickers 2
   m_TagString: Untagged
@@ -2967,18 +2966,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288439640}
   m_CullTransparentMesh: 1
---- !u!114 &288439647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288439640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &300607960
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,7 +3142,6 @@ GameObject:
   - component: {fileID: 336734820}
   - component: {fileID: 336734819}
   - component: {fileID: 336734818}
-  - component: {fileID: 336734823}
   m_Layer: 5
   m_Name: Upgrade Plantation 2
   m_TagString: Untagged
@@ -3323,18 +3309,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336734816}
   m_CullTransparentMesh: 1
---- !u!114 &336734823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336734816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &336776333
 GameObject:
   m_ObjectHideFlags: 0
@@ -4083,7 +4057,6 @@ GameObject:
   - component: {fileID: 428962096}
   - component: {fileID: 428962095}
   - component: {fileID: 428962094}
-  - component: {fileID: 428962099}
   m_Layer: 5
   m_Name: Upgrade Factory 1
   m_TagString: Untagged
@@ -4251,18 +4224,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428962092}
   m_CullTransparentMesh: 1
---- !u!114 &428962099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428962092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &433383910
 GameObject:
   m_ObjectHideFlags: 0
@@ -6565,7 +6526,6 @@ GameObject:
   - component: {fileID: 774724808}
   - component: {fileID: 774724807}
   - component: {fileID: 774724806}
-  - component: {fileID: 774724811}
   m_Layer: 5
   m_Name: Upgrade Bank 2
   m_TagString: Untagged
@@ -6733,18 +6693,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774724804}
   m_CullTransparentMesh: 1
---- !u!114 &774724811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774724804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &783943392
 GameObject:
   m_ObjectHideFlags: 0
@@ -6795,7 +6743,6 @@ GameObject:
   - component: {fileID: 784747515}
   - component: {fileID: 784747514}
   - component: {fileID: 784747513}
-  - component: {fileID: 784747518}
   m_Layer: 5
   m_Name: Upgrade Factory 3
   m_TagString: Untagged
@@ -6963,18 +6910,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784747511}
   m_CullTransparentMesh: 1
---- !u!114 &784747518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784747511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &786666175
 GameObject:
   m_ObjectHideFlags: 0
@@ -7636,7 +7571,6 @@ GameObject:
   - component: {fileID: 884164165}
   - component: {fileID: 884164164}
   - component: {fileID: 884164163}
-  - component: {fileID: 884164168}
   m_Layer: 5
   m_Name: Upgrade Clickers 4
   m_TagString: Untagged
@@ -7804,18 +7738,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884164161}
   m_CullTransparentMesh: 1
---- !u!114 &884164168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884164161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &887405278
 GameObject:
   m_ObjectHideFlags: 0
@@ -7965,7 +7887,6 @@ GameObject:
   - component: {fileID: 895324989}
   - component: {fileID: 895324988}
   - component: {fileID: 895324987}
-  - component: {fileID: 895324992}
   m_Layer: 5
   m_Name: Upgrade Bank 1
   m_TagString: Untagged
@@ -8133,18 +8054,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895324985}
   m_CullTransparentMesh: 1
---- !u!114 &895324992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 895324985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &901902220
 GameObject:
   m_ObjectHideFlags: 0
@@ -8981,7 +8890,6 @@ GameObject:
   - component: {fileID: 1001822186}
   - component: {fileID: 1001822185}
   - component: {fileID: 1001822184}
-  - component: {fileID: 1001822189}
   m_Layer: 5
   m_Name: Upgrade Factory 4
   m_TagString: Untagged
@@ -9149,18 +9057,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001822182}
   m_CullTransparentMesh: 1
---- !u!114 &1001822189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001822182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1006337404
 GameObject:
   m_ObjectHideFlags: 0
@@ -12532,7 +12428,6 @@ GameObject:
   - component: {fileID: 1393689534}
   - component: {fileID: 1393689533}
   - component: {fileID: 1393689532}
-  - component: {fileID: 1393689537}
   m_Layer: 5
   m_Name: Upgrade Clickers 3
   m_TagString: Untagged
@@ -12700,18 +12595,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393689530}
   m_CullTransparentMesh: 1
---- !u!114 &1393689537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393689530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1397644150
 GameObject:
   m_ObjectHideFlags: 0
@@ -13418,7 +13301,6 @@ GameObject:
   - component: {fileID: 1429043610}
   - component: {fileID: 1429043609}
   - component: {fileID: 1429043608}
-  - component: {fileID: 1429043613}
   m_Layer: 5
   m_Name: Upgrade Bank 3
   m_TagString: Untagged
@@ -13586,18 +13468,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429043606}
   m_CullTransparentMesh: 1
---- !u!114 &1429043613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429043606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1437888115
 GameObject:
   m_ObjectHideFlags: 0
@@ -13882,7 +13752,6 @@ GameObject:
   - component: {fileID: 1442752641}
   - component: {fileID: 1442752640}
   - component: {fileID: 1442752639}
-  - component: {fileID: 1442752644}
   m_Layer: 5
   m_Name: Upgrade Plantation 1
   m_TagString: Untagged
@@ -14050,18 +13919,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442752637}
   m_CullTransparentMesh: 1
---- !u!114 &1442752644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442752637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1442767065
 GameObject:
   m_ObjectHideFlags: 0
@@ -14571,7 +14428,6 @@ GameObject:
   - component: {fileID: 1509319672}
   - component: {fileID: 1509319671}
   - component: {fileID: 1509319670}
-  - component: {fileID: 1509319675}
   m_Layer: 5
   m_Name: Upgrade Plantation 3
   m_TagString: Untagged
@@ -14739,18 +14595,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509319668}
   m_CullTransparentMesh: 1
---- !u!114 &1509319675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509319668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1549639045
 GameObject:
   m_ObjectHideFlags: 0
@@ -15705,7 +15549,6 @@ GameObject:
   - component: {fileID: 1732249040}
   - component: {fileID: 1732249039}
   - component: {fileID: 1732249038}
-  - component: {fileID: 1732249043}
   m_Layer: 5
   m_Name: Upgrade Factory 2
   m_TagString: Untagged
@@ -15873,18 +15716,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732249036}
   m_CullTransparentMesh: 1
---- !u!114 &1732249043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732249036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1732724285
 GameObject:
   m_ObjectHideFlags: 0
@@ -16163,7 +15994,6 @@ GameObject:
   - component: {fileID: 1824595750}
   - component: {fileID: 1824595754}
   - component: {fileID: 1824595753}
-  - component: {fileID: 1824595755}
   m_Layer: 5
   m_Name: Upgrade Clickers 1
   m_TagString: Untagged
@@ -16331,18 +16161,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradePrice: 50
---- !u!114 &1824595755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824595748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1870643691
 GameObject:
   m_ObjectHideFlags: 0
@@ -16936,7 +16754,6 @@ GameObject:
   - component: {fileID: 2014066639}
   - component: {fileID: 2014066638}
   - component: {fileID: 2014066637}
-  - component: {fileID: 2014066642}
   m_Layer: 5
   m_Name: Upgrade Bank 4
   m_TagString: Untagged
@@ -17104,18 +16921,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014066635}
   m_CullTransparentMesh: 1
---- !u!114 &2014066642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2014066635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2024082791
 GameObject:
   m_ObjectHideFlags: 0
@@ -17457,7 +17262,6 @@ GameObject:
   - component: {fileID: 2056772068}
   - component: {fileID: 2056772067}
   - component: {fileID: 2056772066}
-  - component: {fileID: 2056772071}
   m_Layer: 5
   m_Name: Upgrade Plantation 4
   m_TagString: Untagged
@@ -17625,18 +17429,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056772064}
   m_CullTransparentMesh: 1
---- !u!114 &2056772071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056772064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e778afa173b8ba346895572b3ee6d059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2058029730
 GameObject:
   m_ObjectHideFlags: 0
@@ -18124,10 +17916,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1424352050}
     - target: {fileID: 7854957270341988294, guid: 5d94e118a44a48a488aebeeb6c01c120, type: 3}
-      propertyPath: buildingPrices.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7854957270341988294, guid: 5d94e118a44a48a488aebeeb6c01c120, type: 3}
       propertyPath: buildingPrices.Array.data[0]
       value: 
       objectReference: {fileID: 2069933946}
@@ -18141,6 +17929,10 @@ PrefabInstance:
       objectReference: {fileID: 887405280}
     - target: {fileID: 7854957270341988294, guid: 5d94e118a44a48a488aebeeb6c01c120, type: 3}
       propertyPath: buildingPrices.Array.data[3]
+      value: 
+      objectReference: {fileID: 1444274798}
+    - target: {fileID: 7854957270341988294, guid: 5d94e118a44a48a488aebeeb6c01c120, type: 3}
+      propertyPath: buildingPrices.Array.data[4]
       value: 
       objectReference: {fileID: 1126418758}
     m_RemovedComponents: []
