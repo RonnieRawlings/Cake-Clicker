@@ -170,6 +170,39 @@ public class AddBuildings : MonoBehaviour
         }
     }
 
+    public void AddOffice()
+    {
+        TextMeshProUGUI amountOwnedText = transform.GetChild(4).GetChild(3).GetComponent<TextMeshProUGUI>();
+        int upgradePrice = int.Parse(StaticValues.buildingPrices[4].text.Replace(",", ""));
+
+        if (StaticValues.currentCakes >= upgradePrice)
+        {
+            if (amountOwnedText.text == "")
+            {
+                amountOwnedText.text = "1";
+
+                StaticValues.offices[0].transform.parent.parent.gameObject.SetActive(true);
+                StaticValues.offices[0].GetComponent<Image>().enabled = true;
+            }
+            else
+            {
+                int currentOwned = int.Parse(amountOwnedText.text);
+
+                if (StaticValues.offices.Count > currentOwned)
+                {
+                    StaticValues.offices[currentOwned].GetComponent<Image>().enabled = true;
+                }
+
+                amountOwnedText.text = (currentOwned + 1).ToString();
+            }
+
+            StaticValues.cakesPerSecond += StaticValues.officeCPS;
+            StaticValues.totalOffices++;
+            StaticValues.currentCakes -= upgradePrice;
+            IncreaseUpgradePrice(StaticValues.buildingPrices[4], upgradePrice);
+        }
+    }
+
     public void IncreaseUpgradePrice(TextMeshProUGUI textToChange, int currentPrice)
     {
         currentPrice = (int)(currentPrice * 1.4f);

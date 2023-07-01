@@ -51,6 +51,7 @@ public class AutoSave : MonoBehaviour
         gameSave.hasPurchasedPlantationUpgrade = upgradeManagement.hasPurchasedPlantationUpgrade;
         gameSave.hasPurchasedFactoryUpgrade = upgradeManagement.hasPurchasedFactoryUpgrade;
         gameSave.hasPurchasedBankUpgrade = upgradeManagement.hasPurchasedBankUpgrade;
+        gameSave.hasPurchasedOfficeUpgrade = upgradeManagement.hasPurchasedOfficeUpgrade;
     }
     
     public void UpgradeValuesSave(GameSave gameSave)
@@ -91,6 +92,7 @@ public class AutoSave : MonoBehaviour
         gameSave.plantationCPS = StaticValues.plantationCPS;
         gameSave.factoryCPS = StaticValues.factoryCPS;
         gameSave.bankCPS = StaticValues.bankCPS;
+        gameSave.officeCPS = StaticValues.officeCPS;
      
         List<GameObjectData> clickerData = new List<GameObjectData>();
         foreach (GameObject gameObj in StaticValues.clickers)
@@ -132,9 +134,20 @@ public class AutoSave : MonoBehaviour
         }
         gameSave.banks = bankData;
 
+        List<GameObjectData> officeData = new List<GameObjectData>();
+        foreach (GameObject gameObj in StaticValues.offices)
+        {
+            GameObjectData gameObjData = new GameObjectData();
+            gameObjData.gameObjectName = gameObj.name;
+            gameObjData.isActive = gameObj.GetComponent<Image>().enabled;
+            officeData.Add(gameObjData);
+        }
+        gameSave.offices = bankData;
+
         gameSave.totalPlantations = StaticValues.totalPlantations;
         gameSave.totalFactories = StaticValues.totalFactories;
         gameSave.totalBanks = StaticValues.totalBanks;
+        gameSave.totalOffices = StaticValues.totalOffices;
         gameSave.totalClickerCPS = StaticValues.totalClickerCPS;
     }
 }

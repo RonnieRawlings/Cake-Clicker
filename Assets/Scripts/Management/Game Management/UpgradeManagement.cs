@@ -23,10 +23,13 @@ public class UpgradeManagement : MonoBehaviour
     public List<GameObject> bankUpgrades = new List<GameObject>();
     public List<bool> hasPurchasedBankUpgrade = new List<bool>();
 
+    public List<GameObject> officeUpgrades = new List<GameObject>();
+    public List<bool> hasPurchasedOfficeUpgrade = new List<bool>();
+
     #endregion
 
     public List<Transform> upgradePositions = new List<Transform>();
-    private int clickerOffset, plantationOffset, factoryOffset, bankOffset;
+    private int clickerOffset, plantationOffset, factoryOffset, bankOffset, officeOffset;
 
     private void Awake()
     {
@@ -38,6 +41,7 @@ public class UpgradeManagement : MonoBehaviour
             hasPurchasedPlantationUpgrade = loadedSave.hasPurchasedPlantationUpgrade;
             hasPurchasedFactoryUpgrade = loadedSave.hasPurchasedFactoryUpgrade;
             hasPurchasedBankUpgrade = loadedSave.hasPurchasedBankUpgrade;
+            hasPurchasedOfficeUpgrade = loadedSave.hasPurchasedOfficeUpgrade;
         }
     }
 
@@ -118,6 +122,26 @@ public class UpgradeManagement : MonoBehaviour
                     hasPurchasedBankUpgrade[i] = true;
                     bankUpgrades[i].transform.parent = upgradePositions[FindOpenPosition()].transform;
                     bankUpgrades[i].transform.position = bankUpgrades[i].transform.parent.position;
+                }
+            }
+        }
+    }
+
+    public void VisibleOfficeUpgrades()
+    {
+        if (FindOpenPosition() == 5)
+        {
+            officeOffset++;
+        }
+        else
+        {
+            for (int i = 0; i < officeUpgrades.Count; i++)
+            {
+                if ((StaticValues.totalOffices - officeOffset) >= (i == 0 ? 1 : i * 5) && !hasPurchasedOfficeUpgrade[i])
+                {
+                    hasPurchasedOfficeUpgrade[i] = true;
+                    officeUpgrades[i].transform.parent = upgradePositions[FindOpenPosition()].transform;
+                    officeUpgrades[i].transform.position = officeUpgrades[i].transform.parent.position;
                 }
             }
         }

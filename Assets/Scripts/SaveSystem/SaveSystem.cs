@@ -38,7 +38,7 @@ public class GameSave
     [DataMember]
     public List<TextData> buildingPrices = new List<TextData>();
     [DataMember]
-    public float totalPlantations, totalFactories, totalBanks;
+    public float totalPlantations, totalFactories, totalBanks, totalOffices;
     [DataMember]
     public List<GameObjectData> clickers = new List<GameObjectData>();
     [DataMember]
@@ -50,7 +50,9 @@ public class GameSave
     [DataMember]
     public List<GameObjectData> banks = new List<GameObjectData>();
     [DataMember]
-    public float plantationCPS, factoryCPS, bankCPS;
+    public List<GameObjectData> offices = new List<GameObjectData>();
+    [DataMember]
+    public float plantationCPS, factoryCPS, bankCPS, officeCPS;
 
     // UPGRADE MANAGEMENT SCRIPT
     [DataMember]
@@ -61,6 +63,8 @@ public class GameSave
     public List<bool> hasPurchasedFactoryUpgrade = new List<bool>();
     [DataMember]
     public List<bool> hasPurchasedBankUpgrade = new List<bool>();
+    [DataMember]
+    public List<bool> hasPurchasedOfficeUpgrade = new List<bool>();
 
     // UPGRADE VALUES SCRIPT
     [DataMember]

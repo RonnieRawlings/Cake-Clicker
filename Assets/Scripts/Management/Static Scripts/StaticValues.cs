@@ -47,6 +47,13 @@ public static class StaticValues
 
     #endregion
 
+    #region Office Values
+
+    public static List<GameObject> offices = new List<GameObject>();
+    public static float officeCPS = 250.0f, totalOffices = 0;
+
+    #endregion
+
     static StaticValues()
     {
         loadedSave = SaveSystem.LoadGame();
@@ -64,6 +71,7 @@ public static class StaticValues
             totalPlantations = loadedSave.totalPlantations;
             totalBanks = loadedSave.totalBanks;
             totalFactories = loadedSave.totalFactories;
+            totalOffices = loadedSave.totalOffices;
 
             clickerCPS = loadedSave.clickerCPS;
             totalClickerCPS = loadedSave.totalClickerCPS;
@@ -73,6 +81,7 @@ public static class StaticValues
             plantationCPS = loadedSave.plantationCPS;
             factoryCPS = loadedSave.factoryCPS;
             bankCPS = loadedSave.bankCPS;
+            officeCPS = loadedSave.officeCPS;
 
             plantations = new List<GameObject>();
             SetGameObjectLists(plantations, loadedSave.plantations);
@@ -82,6 +91,9 @@ public static class StaticValues
 
             banks = new List<GameObject>();
             SetGameObjectLists(banks, loadedSave.banks);
+
+            offices = new List<GameObject>();
+            SetGameObjectLists(offices, loadedSave.offices);
         }
         else
         {
