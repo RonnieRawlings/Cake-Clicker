@@ -142,7 +142,7 @@ public class AutoSave : MonoBehaviour
             gameObjData.isActive = gameObj.GetComponent<Image>().enabled;
             officeData.Add(gameObjData);
         }
-        gameSave.offices = bankData;
+        gameSave.offices = officeData;
 
         gameSave.totalPlantations = StaticValues.totalPlantations;
         gameSave.totalFactories = StaticValues.totalFactories;

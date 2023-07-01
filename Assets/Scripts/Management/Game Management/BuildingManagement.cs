@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class BuildingManagement : MonoBehaviour
 {
     public List<TextMeshProUGUI> buildingPrices = new List<TextMeshProUGUI>();
+    public List<GameObject> offices = new List<GameObject>();
 
     public void EnableBuilding()
     {       
@@ -41,6 +42,8 @@ public class BuildingManagement : MonoBehaviour
             buildings.GetChild(2).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalFactories.ToString();
         if (StaticValues.totalBanks != 0)
             buildings.GetChild(3).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalBanks.ToString();
+        if (StaticValues.totalOffices != 0)
+            buildings.GetChild(4).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalOffices.ToString();
 
         int amount = 0;
         foreach (var obj in StaticValues.clickers)
@@ -63,6 +66,7 @@ public class BuildingManagement : MonoBehaviour
             StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(0).GetChild(1), StaticValues.plantations);
             StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(1).GetChild(1), StaticValues.factories);
             StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(2).GetChild(1), StaticValues.banks);
+            StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(3).GetChild(1), StaticValues.offices);
         }
         
         if (StaticValues.buildingPrices.Count == 0)
@@ -79,5 +83,7 @@ public class BuildingManagement : MonoBehaviour
     void Update()
     {
         EnableBuilding();
+
+        offices = StaticValues.offices;
     }
 }

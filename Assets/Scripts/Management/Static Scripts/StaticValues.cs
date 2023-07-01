@@ -119,6 +119,9 @@ public static class StaticValues
         banks.Clear();
         bankCPS = 120.0f;
         totalBanks = 0;
+        offices.Clear();
+        officeCPS = 250.0f;
+        totalOffices = 0;
     }
 
 
