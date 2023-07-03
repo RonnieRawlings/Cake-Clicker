@@ -10793,7 +10793,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 40,000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7622a4db13d497a46a36c00fb5e6e3ff, type: 2}
   m_sharedMaterial: {fileID: -7028152687354460389, guid: 7622a4db13d497a46a36c00fb5e6e3ff, type: 2}
@@ -11009,7 +11009,7 @@ MonoBehaviour:
   infoBackground: {fileID: 1997064988}
   info: Adds an Office that manages cakes.
   title: Office
-  price: 50000
+  price: 40000
   cps: 'Each office produces: '
 --- !u!114 &1164060616
 MonoBehaviour:

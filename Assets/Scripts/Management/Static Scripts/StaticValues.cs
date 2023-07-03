@@ -50,7 +50,7 @@ public static class StaticValues
     #region Office Values
 
     public static List<GameObject> offices = new List<GameObject>();
-    public static float officeCPS = 250.0f, totalOffices = 0;
+    public static float officeCPS = 350.0f, totalOffices = 0;
 
     #endregion
 
