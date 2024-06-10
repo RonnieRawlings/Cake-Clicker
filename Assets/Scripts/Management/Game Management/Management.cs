@@ -11,7 +11,7 @@ public class Management : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI cakeAmountText, cakesPerSecond;
     [SerializeField] private Canvas cakeCanvas;
-    [SerializeField] private Font textFont;
+    [SerializeField] private TMP_FontAsset textFont;
 
     public void ResetSelectedButton()
     {
@@ -54,17 +54,23 @@ public class Management : MonoBehaviour
         textObject.transform.SetParent(cakeCanvas.transform);
 
         textObject.transform.position = Input.mousePosition;
-        Text text = textObject.AddComponent<Text>();
+        TextMeshProUGUI text = textObject.AddComponent<TextMeshProUGUI>();
 
         text.raycastTarget = false;
-        text.resizeTextForBestFit = true;
+        text.autoSizeTextContainer = true;
         text.text = "+" + StaticValues.clickAmount.ToString();
         text.font = textFont;
-        text.resizeTextMinSize = 30;
-        text.resizeTextMaxSize = 50;
+
+        text.enableAutoSizing = true;
+
+        // Calculate the font size based on the screen resolution
+        float resolutionFactor = Screen.height / 1080f; // assuming 1080p as the base resolution
+        text.fontSizeMin = 30 * resolutionFactor;
+        text.fontSizeMax = 50 * resolutionFactor;
 
         StartCoroutine(FadeOut(textObject));
     }
+
 
     IEnumerator FadeOut(GameObject obj)
     {

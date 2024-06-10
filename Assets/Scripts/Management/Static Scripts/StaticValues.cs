@@ -57,7 +57,6 @@ public static class StaticValues
     static StaticValues()
     {
         loadedSave = SaveSystem.LoadGame();
-        Debug.Log("This is called cunt");
 
         if (loadedSave != null)
         {

@@ -11,6 +11,8 @@ public class PetInfoChange : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] private Image infoBackground;
     [SerializeField] protected string title, info;
 
+    public bool isPointerOver = false;
+
     public string Title
     {
         set { title = value; }
@@ -26,6 +28,8 @@ public class PetInfoChange : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         titleBox.text = title;
         infoBox.text = info;
         infoBackground.enabled = true;
+
+        isPointerOver = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -33,6 +37,8 @@ public class PetInfoChange : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         titleBox.text = "";
         infoBox.text = "";
         infoBackground.enabled = false;
+
+        isPointerOver = false;
     }
 
     public void ForceTextChange()
@@ -47,5 +53,7 @@ public class PetInfoChange : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         titleBox.text = "";
         infoBox.text = "";
         infoBackground.enabled = false;
+
+        isPointerOver = false;
     }
 }

@@ -12,6 +12,8 @@ public class UpgradeValues : MonoBehaviour
     {
         if (StaticValues.loadedSave != null)
         {
+            Debug.Log("Here");
+
             foreach (GameObjectData upgrade in StaticValues.loadedSave.upgradePositions)
             {
                 if (upgrade.gameObjectName == transform.name)
