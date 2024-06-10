@@ -10,16 +10,18 @@ using UnityEngine.UI;
 public class BuildingManagement : MonoBehaviour
 {
     public List<TextMeshProUGUI> buildingPrices = new List<TextMeshProUGUI>();
+    public List<GameObject> offices = new List<GameObject>();
 
     public void EnableBuilding()
-    {
+    {       
         foreach (TextMeshProUGUI building in StaticValues.buildingPrices)
         {
+            int.TryParse(building.transform.parent.GetChild(3).GetComponent<TextMeshProUGUI>().text, out int tryParse);
             if (building.text == "-")
             {
 
             }
-            else if (StaticValues.currentCakes >= int.Parse(building.text.Replace(",", "")))
+            else if (StaticValues.currentCakes >= int.Parse(building.text.Replace(",", "")) || tryParse > 0)
             {
                 if (building.GetComponentInParent<Button>().interactable == false)
                 {
@@ -31,18 +33,57 @@ public class BuildingManagement : MonoBehaviour
         }
     }
 
+    public void LoadBuildingVisuals()
+    {
+        Transform buildings = GameObject.Find("CakeCanvas").transform.GetChild(3).GetChild(2);
+        if (StaticValues.totalPlantations != 0)
+            buildings.GetChild(1).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalPlantations.ToString();
+        if (StaticValues.totalFactories != 0)
+            buildings.GetChild(2).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalFactories.ToString();
+        if (StaticValues.totalBanks != 0)
+            buildings.GetChild(3).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalBanks.ToString();
+        if (StaticValues.totalOffices != 0)
+            buildings.GetChild(4).GetChild(3).GetComponent<TextMeshProUGUI>().text = StaticValues.totalOffices.ToString();
+
+        int amount = 0;
+        foreach (var obj in StaticValues.clickers)
+        {
+            if (obj.GetComponent<Image>().enabled)
+            {
+                amount++;
+            }
+        }
+        if (amount !=0)
+            buildings.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>().text = amount.ToString();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        Transform buildingsVisualised = GameObject.Find("CakeCanvas").transform.Find("BuildingsVisualised");
-        StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(0).GetChild(1), StaticValues.plantations);
-        StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(1).GetChild(1), StaticValues.factories);
-        StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(2).GetChild(1), StaticValues.banks);
-        StaticValues.buildingPrices = buildingPrices;    
+        if (StaticValues.plantations.Count == 0)
+        {
+            Transform buildingsVisualised = GameObject.Find("CakeCanvas").transform.Find("BuildingsVisualised");
+            StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(0).GetChild(1), StaticValues.plantations);
+            StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(1).GetChild(1), StaticValues.factories);
+            StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(2).GetChild(1), StaticValues.banks);
+            StaticValues.FillBuildingVisualSlots(buildingsVisualised.GetChild(3).GetChild(1), StaticValues.offices);
+        }
+        
+        if (StaticValues.buildingPrices.Count == 0)
+        {
+            StaticValues.buildingPrices = buildingPrices;
+            Debug.Log("THIS IS CALLED");
+        }
+        else
+        {
+            LoadBuildingVisuals();
+        }       
     }
 
     void Update()
     {
         EnableBuilding();
+
+        offices = StaticValues.offices;
     }
 }

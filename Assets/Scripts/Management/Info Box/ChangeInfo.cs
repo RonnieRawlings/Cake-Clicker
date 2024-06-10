@@ -39,7 +39,8 @@ public class ChangeInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                 { "AddClicker", cps + StaticValues.clickerCPS + " cakes per second." },
                 { "AddPlantation", cps + StaticValues.plantationCPS + " cakes per second" },
                 { "AddFactory", cps + StaticValues.factoryCPS + " cakes per second" },
-                { "AddBank", cps + StaticValues.bankCPS + " cakes per second" }
+                { "AddBank", cps + StaticValues.bankCPS + " cakes per second" },
+                { "AddOffice", cps + StaticValues.officeCPS + " cakes per second" }
             };
 
             if (cpsValues.ContainsKey(transform.name))
