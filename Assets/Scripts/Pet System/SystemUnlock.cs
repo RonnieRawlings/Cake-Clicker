@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class SystemUnlock : MonoBehaviour
 {
-    private int unlockAmount = 1;
+    private int unlockAmount = 3000;
 
     public void UnlockSystemMeth()
     {
